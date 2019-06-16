@@ -15,7 +15,7 @@ bot.on('guildMemberAdd', member =>{
     const channel = member.guild.channels.find(channel => channel.name === "welcome");
     if(!channel) return;
 
-    channel.send(`Welcome to Galactic Discord Server, ${member}, Hope you enjoy it! :slight_smile: `)
+    channel.send(`Selamat datang di Galactic Discord Server, ${member}! Selamat bersenang-senang! :slight_smile: `)
 });
 
 bot.on('guildMemberRemove', member =>{
@@ -23,7 +23,7 @@ bot.on('guildMemberRemove', member =>{
     const channel = member.guild.channels.find(channel => channel.name === "goodbye");
     if(!channel) return;
 
-    channel.send(`${member} has left the server. :anguished: `)
+    channel.send(`Sampai jumpa ${member}! Terima kasih. :anguished: `)
 });
 
 
