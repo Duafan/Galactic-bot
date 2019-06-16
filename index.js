@@ -70,4 +70,4 @@ bot.on('message', message=>{
 
 })
 
-bot.login(procces.env.token);
+bot.login(process.env.token);
