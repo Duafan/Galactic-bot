@@ -23,7 +23,7 @@ bot.on('guildMemberRemove', member =>{
     const channel = member.guild.channels.find(channel => channel.name === "goodbye");
     if(!channel) return;
 
-    channel.send(`Sampai jumpa ${member}! Terima kasih. :anguished: `)
+    channel.send(`Sampai jumpa ${member}! Terima kasih. :upside_down:  `)
 });
 
 
