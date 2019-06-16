@@ -12,7 +12,7 @@ bot.on('ready', () =>{
 
 bot.on('guildMemberAdd', member =>{
 
-    const channel = member.guild.channels.find(channel => channel.name === "command-bot");
+    const channel = member.guild.channels.find(channel => channel.name === "welcome");
     if(!channel) return;
 
     channel.send(`Welcome to Galactic Discord Server, ${member}, Hope you enjoy it! :slight_smile: `)
@@ -20,7 +20,7 @@ bot.on('guildMemberAdd', member =>{
 
 bot.on('guildMemberRemove', member =>{
 
-    const channel = member.guild.channels.find(channel => channel.name === "command-bot");
+    const channel = member.guild.channels.find(channel => channel.name === "goodbye");
     if(!channel) return;
 
     channel.send(`${member} has left the server. :anguished: `)
