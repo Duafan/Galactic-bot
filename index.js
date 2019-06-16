@@ -10,7 +10,20 @@ bot.on('ready', () =>{
     bot.user.setActivity('with zexter-', { type: 'STREAMING', url:"https://www.twitch.tv/duafan"}).catch(console.error);
 })
 
+const serverStats = {
+    guildID: '589811893858730035',
+    totalUserID: '589812086935388161',
+    memberCount: '589812154065223690',
+    botCountID: '589812223388549140',
+};
+
 bot.on('guildMemberAdd', member =>{
+
+    if (member.guild.id !== serverStats.guildID) return;
+
+    client.channels.get(serverStats.totalUserID).setName(`Total Users : ${member.guild.memberCount}`);
+    client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
+    client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
 
     const channel = member.guild.channels.find(channel => channel.name === "welcome");
     if(!channel) return;
@@ -20,6 +33,12 @@ bot.on('guildMemberAdd', member =>{
 
 bot.on('guildMemberRemove', member =>{
 
+    if (member.guild.id !== serverStats.guildID) return;
+
+    client.channels.get(serverStats.totalUserID).setName(`Total Users : ${member.guild.memberCount}`);
+    client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
+    client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
+    
     const channel = member.guild.channels.find(channel => channel.name === "goodbye");
     if(!channel) return;
 
