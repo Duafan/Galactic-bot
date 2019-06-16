@@ -33,7 +33,11 @@ bot.on('message', message=>{
 
     switch (args[0]){
         case 'ping':
-            message.reply('pong!');
+            message.channel.send({embed:{ 
+                title:"Ping!",
+                description:"Pong!",
+                color: 0x5DADE2   
+            }});
             break;
         case 'hi':
                 message.reply('Hello!');
