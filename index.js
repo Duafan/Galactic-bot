@@ -8,7 +8,7 @@ var version = '1.0.5';
 
 client.on('ready', () =>{
     console.log('This bot is online!');
-    bot.user.setActivity('with zexter-', { type: 'STREAMING', url:"https://www.twitch.tv/duafan"}).catch(console.error);
+    client.user.setActivity('with zexter-', { type: 'STREAMING', url:"https://www.twitch.tv/duafan"}).catch(console.error);
 })
 
 const serverStats = {
@@ -25,6 +25,11 @@ client.on('guildMemberAdd', member =>{
     client.channels.get(serverStats.totalUserID).setName(`Total Users : ${member.guild.memberCount}`);
     client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
     client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
+    
+    const channel = member.guild.channels.find(channel => channel.name === "welcome");
+    if(!channel) return;
+
+    channel.send(`Selamat datang di Galactic Discord Server, ${member}! Selamat bersenang-senang! :slight_smile: `)
 });
 
 client.on('guildMemberRemove', member =>{
@@ -34,6 +39,11 @@ client.on('guildMemberRemove', member =>{
     client.channels.get(serverStats.totalUserID).setName(`Total Users : ${member.guild.memberCount}`);
     client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
     client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
+    
+    const channel = member.guild.channels.find(channel => channel.name === "goodbye");
+    if(!channel) return;
+
+    channel.send(`Sampai jumpa ${member}! Terima kasih. :upside_down:  `)
 });
 
 //Listener events
