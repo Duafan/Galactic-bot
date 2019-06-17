@@ -1,4 +1,4 @@
-const {Discord, Attachment} = require('discord.js');
+const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const PREFIX = '.'; 
@@ -25,11 +25,6 @@ client.on('guildMemberAdd', member =>{
     client.channels.get(serverStats.totalUserID).setName(`Total Users : ${member.guild.memberCount}`);
     client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
     client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
-
-    const channel = member.guild.channels.find(channel => channel.name === "welcome");
-    if(!channel) return;
-
-    channel.send(`Selamat datang di Galactic Discord Server, ${member}! Selamat bersenang-senang! :slight_smile: `)
 });
 
 client.on('guildMemberRemove', member =>{
@@ -39,11 +34,6 @@ client.on('guildMemberRemove', member =>{
     client.channels.get(serverStats.totalUserID).setName(`Total Users : ${member.guild.memberCount}`);
     client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
     client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
-    
-    const channel = member.guild.channels.find(channel => channel.name === "goodbye");
-    if(!channel) return;
-
-    channel.send(`Sampai jumpa ${member}! Terima kasih. :upside_down:  `)
 });
 
 //Listener events
