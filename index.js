@@ -18,7 +18,7 @@ const serverStats = {
 };
 
 
-client.on('guildMemberAdd', member =>{
+bot.on('guildMemberAdd', member =>{
 
     if(member.guild.id !== serverStats.guildID) return;
 
@@ -27,7 +27,7 @@ client.on('guildMemberAdd', member =>{
     client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`) //Bot
 });
 
-client.on('guildMemberRemove', member =>{
+bot.on('guildMemberRemove', member =>{
 
     if(member.guild.id !== serverStats.guildID) return;
 
