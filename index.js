@@ -1,14 +1,14 @@
 const {Discord, Attachment} = require('discord.js');
 const client = new Discord.Client();
 
-const prefix = '.'; 
+const PREFIX = '.'; 
 const ownerID = '335726296091066386';
 
 var version = '1.0.5';
 
 client.on('ready', () =>{
     console.log('This bot is online!');
-    client.user.setActivity('with zexter-', { type: 'STREAMING', url:"https://www.twitch.tv/duafan"}).catch(console.error);
+    bot.user.setActivity('with zexter-', { type: 'STREAMING', url:"https://www.twitch.tv/duafan"}).catch(console.error);
 })
 
 const serverStats = {
@@ -47,15 +47,15 @@ client.on('guildMemberRemove', member =>{
 });
 
 //Listener events
-client.on('message', message=>{
+client.on('message', message => {
 
     // Variables
-    let args = message.content.slice(prefix.length).trim().split(' ');
+    let args = message.content.slice(PREFIX.length).trim().split(' ');
     let cmd = args.shift().toLowerCase();
 
     // Returnt statements
     if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(PREFIX)) return;
 
     //Command Handler
     try {
@@ -65,7 +65,7 @@ client.on('message', message=>{
         let commandFile = require(`./commands/${cmd}.js`);
         commandFile.run(client, message, args);
 
-    }catch (e) {
+    } catch (e) {
         console.log(e.stack)
     }
 
