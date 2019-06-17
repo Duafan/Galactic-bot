@@ -11,38 +11,29 @@ bot.on('ready', () =>{
 })
 
 const serverStats = {
-    guildID: '335722331949367296',
-    totalUserID: '589812086935388161',
-    memberCount: '589812154065223690',
-    botCountID: '589812223388549140',
+    guildID: '335722331949367296', //Guild ID
+    totalUserID: '589812086935388161', //Total Users : 0
+    memberCountID: '589812154065223690', //Member Count : 0
+    botCountID: '589812223388549140' //Bot Count: 0
 };
 
-bot.on('guildMemberAdd', member =>{
+
+client.on('guildMemberAdd', member =>{
 
     if(member.guild.id !== serverStats.guildID) return;
 
     client.channels.get(serverStats.totalUserID).setName(`Total Users : ${member.guild.memberCount}`); //Total
     client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`); //Member
     client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`) //Bot
-
-    const channel = member.guild.channels.find(channel => channel.name === "welcome");
-    if(!channel) return;
-
-    channel.send(`Selamat datang di Galactic Discord Server, ${member}! Selamat bersenang-senang! :slight_smile: `)
 });
 
-bot.on('guildMemberRemove', member =>{
+client.on('guildMemberRemove', member =>{
 
     if(member.guild.id !== serverStats.guildID) return;
 
     client.channels.get(serverStats.totalUserID).setName(`Total Users : ${member.guild.memberCount}`);
     client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
     client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`)
-    
-    const channel = member.guild.channels.find(channel => channel.name === "goodbye");
-    if(!channel) return;
-
-    channel.send(`Sampai jumpa ${member}! Terima kasih. :upside_down:  `)
 });
 
 
