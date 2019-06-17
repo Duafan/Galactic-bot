@@ -3,7 +3,7 @@ const bot = new Client();
 
 const PREFIX = '.'; 
 
-var version = '1.0.0';
+var version = '1.0.5';
 
 bot.on('ready', () =>{
     console.log('This bot is online!');
