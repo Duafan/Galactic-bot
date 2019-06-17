@@ -11,7 +11,7 @@ bot.on('ready', () =>{
 })
 
 const serverStats = {
-    guildID: '589811893858730035',
+    guildID: '335722331949367296',
     totalUserID: '589812086935388161',
     memberCount: '589812154065223690',
     botCountID: '589812223388549140',
