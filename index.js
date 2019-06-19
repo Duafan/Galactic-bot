@@ -20,20 +20,18 @@ const serverStats = {
 
 client.on('guildMemberAdd', member =>{
 
-    if (member.guild.id !== serverStats.guildID) return;
+    const channel = member.guild.channels.find(channel => channel.name === "welcome");
+    if(!channel) return;
 
-    client.channels.get(serverStats.totalUserID).setName(`Total Users : ${member.guild.memberCount}`);
-    client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
-    client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
+    channel.send(`Selamat datang di Galactic Discord Server, ${member}! Selamat bersenang-senang! :slight_smile: `)
 });
 
 client.on('guildMemberRemove', member =>{
+   
+    const channel = member.guild.channels.find(channel => channel.name === "goodbye");
+    if(!channel) return;
 
-    if (member.guild.id !== serverStats.guildID) return;
-
-    client.channels.get(serverStats.totalUserID).setName(`Total Users : ${member.guild.memberCount}`);
-    client.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
-    client.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
+    channel.send(`Sampai jumpa ${member}! Terima kasih. :upside_down:  `)
 });
 
 //Listener events
@@ -57,6 +55,15 @@ client.on('message', message => {
 
     } catch (e) {
         console.log(e.stack)
+    }
+    
+        function duration(ms) {
+        const sec = Math.floor((ms / 1000) % 60).toString()
+        const min = Math.floor((ms / (1000 * 60)) % 60).toString()
+        const hrs = Math.floor((ms / (1000 * 60 * 60)) % 60).toString()
+        const days = Math.floor((ms / (1000 * 60 * 60 * 24)) % 60).toString()
+        return `${days.padStart(1, '0')} days, ${hrs.padStart(2, '0')} hours, ${min.padStart(2, '0')} minutes, ${sec.padStart(2, '0')} seconds.`
+    
     }
 
     
