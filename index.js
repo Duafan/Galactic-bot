@@ -48,18 +48,21 @@ client.on('message', message => {
     //Command Handler
     try {
 
-        delete require.cache[require.resolve(`./commands/${cmd}.js`)];
+ // Bonus: Auto-Reload (You should move this into it's own command)
+        delete require.cache[require.resolve(`./commands/${cmd}.js`)]; 
 
-        let commandFile = require(`./commands/${cmd}.js`);
-        commandFile.run(client, message, args, ops);
+        // Options
+        let ops = {
+            ownerID: ownerID
+        }
 
-    } catch (e) {
-        console.log(e.stack)
+        let commandFile = require(`./commands/${cmd}.js`); 
+        commandFile.run(client, message, args, ops); 
+
+    } catch (e) { 
+        console.log(e.stack);
     }
 
-    
-    }
-
-)
+});
 
 client.login(process.env.token);
