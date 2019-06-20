@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 var version = '1.0.5';
 exports.run = async (client, message, args) => {
       message.channel.send(embed).then(message => {
