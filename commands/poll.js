@@ -24,4 +24,3 @@ exports.run = async (client, message, args, tools) => {
     message.delete({timeout: 1000}); // This waits 1000 milliseconds before deleting (1 second)
 
 } 
-© 2019 GitHub, Inc.

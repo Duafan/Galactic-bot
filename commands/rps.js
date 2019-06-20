@@ -29,16 +29,16 @@ let scissors = new Discord.RichEmbed()
     .addField('You choose', `${args[0]}`)
     .addField('I choose', scissors2[scissors1])
 
-if (message.content === '-rps rock') message.channel.send(rock)
-if (message.content === '-rps Rock') message.channel.send(rock)
+if (message.content === '.rps rock') message.channel.send(rock)
+if (message.content === '.rps Rock') message.channel.send(rock)
 
-if (message.content === '-rps paper') message.channel.send(paper)
-if (message.content === '-rps Paper') message.channel.send(paper)
+if (message.content === '.rps paper') message.channel.send(paper)
+if (message.content === '.rps Paper') message.channel.send(paper)
 
-if (message.content === '-rps scissors') message.channel.send(scissors)
-if (message.content === '-rps Scissors') message.channel.send(scissors)
+if (message.content === '.rps scissors') message.channel.send(scissors)
+if (message.content === '.rps Scissors') message.channel.send(scissors)
 
 
-if (message.content === '-rps') message.channel.send('Options: ``Rock``, ``Paper``, ``Scissors``. **Usage: -rps <option>**')
+if (message.content === '.rps') message.channel.send('Options: ``Rock``, ``Paper``, ``Scissors``. **Usage: -rps <option>**')
 
 } 
