@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-var version = '1.0.5';
+var version = '1.1.0';
 
 exports.run = async (client, message, args) => {
       const useruser = 'Command ran by: ' + message.author.username;
