@@ -12,7 +12,7 @@ exports.run = async (client, message, args) =>{
    message.channel.send(embed).then(message => {
       embed.setColor(0x43f033)
       embed.setTitle("Owned by Galactic")
-      embed.setDescription("Created by zexter")
+      embed.setDescription("Created by Admin and Owner")
       embed.setFooter(useruser, userurl)
       embed.setTimestamp()
       message.edit(embed)
