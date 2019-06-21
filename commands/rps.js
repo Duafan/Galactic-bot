@@ -39,6 +39,6 @@ if (message.content === '.rps scissors') message.channel.send(scissors)
 if (message.content === '.rps Scissors') message.channel.send(scissors)
 
 
-if (message.content === '.rps') message.channel.send('Options: ``Rock``, ``Paper``, ``Scissors``. **Usage: -rps <option>**')
+if (message.content === '.rps') message.channel.send('Options: ``Rock``, ``Paper``, ``Scissors``. **Usage: .rps <option>**')
 
 } 
