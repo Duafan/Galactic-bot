@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const PREFIX = '.'; 
-const readdirSync = require("fs")
-const stripIndents = require("common-tags")
+const readdirSync = require("fs");
+const stripIndents = require("common-tags");
 
 exports.run = async (client, message, args) => {
         const embed = new Discord.RichEmbed()
