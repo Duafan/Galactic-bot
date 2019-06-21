@@ -3,17 +3,7 @@ const PREFIX = '.';
 const readdirSync = require("fs")
 const stripIndents = require("common-tags")
 
-exports = {
-    config: {
-        name: "help",
-        aliases: ["h", "halp", "commands"],
-        usage: "(command)",
-        category: "miscellaneous",
-        description: "Display all commands that the bot has",
-        accessableby: "everyone"
-
-    },
-    run: async (client, message, args) => {
+exports.run = async (client, message, args) => {
         const embed = new Discord.RichEmbed()
             .setColor(0x43f033)
             .setAuthor(`${message.guild.me.displayName} Help`, message.guild.iconURL)
@@ -51,4 +41,3 @@ exports = {
             return message.channel.send(embed)
         }
     }
-}
