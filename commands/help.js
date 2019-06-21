@@ -3,7 +3,7 @@ const PREFIX = '.';
 const { readdirSync } = require("fs")
 const { stripIndents } = require("common-tags")
 
-module.exports = {
+exports = {
     config: {
         name: "help",
         aliases: ["h", "halp", "commands"],
