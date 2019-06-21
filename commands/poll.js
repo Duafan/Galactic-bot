@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 exports.run = async (client, message, args, tools) => {
 
     // Role Verification (Optional)
-    if (!message.member.roles.find(r => r.name === 'Admin')) return message.channel.send('This requires the role: Admin');
+    if (!message.member.roles.find(r => r.name === 'Admin', 'Owner')) return message.channel.send('This requires the role: Admin, Owner');
 
     // Permission Verification (Optional)
     if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('This requires the permission: ADMINISTRATOR');
