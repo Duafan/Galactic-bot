@@ -1,5 +1,12 @@
 const Discord = require('discord.js');
 
+module.exports.command = {
+  name: "quiz",
+  aliases: ["kuis"],
+  description: "There are only 3 questions",
+  category: "Game",
+  usage: "quiz"
+}
 // Command Handler
 exports.run = async (client, message, args) => {
 

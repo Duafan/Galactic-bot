@@ -1,5 +1,13 @@
 const ascii = require('ascii-art');
 
+module.exports.command = {
+    name: "ascii",
+    aliases: ["asc", "as"],
+    description: "Make an ascii text",
+    category: "Util",
+    usage: "ascii"
+}
+
 // Command Handler - You can use your own
 exports.run = (client, message, args) => {
 

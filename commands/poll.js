@@ -1,5 +1,13 @@
 const Discord = require('discord.js');
 
+module.exports.command = {
+    name: "poll",
+    aliases: ["polling"],
+    description: "Make a poll",
+    category: "Moderation",
+    usage: "poll"
+}
+
 exports.run = async (client, message, args, tools) => {
 
     // Role Verification (Optional)

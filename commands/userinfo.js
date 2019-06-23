@@ -3,6 +3,14 @@
 const Discord = require('discord.js'); 
 const moment = require('moment');
 
+module.exports.command = {
+    name: "userinfo",
+    aliases: ["ui"],
+    description: "To show you someone's information",
+    category: "Util",
+    usage: "userinfo"
+}
+
 exports.run = async (client, message, args) => {
 
     let user;

@@ -1,6 +1,14 @@
 const math = require('mathjs');
 const Discord = require('discord.js');
 
+module.exports.command = {
+    name: "calc",
+    aliases: ["ca", "c", "kal"],
+    description: "Helping you to solve your math problems.",
+    category: "Util",
+    usage: "calc"
+}
+
 exports.run = (client, message, args, tools) => {
 
     if (!args[0]) return message.channel.send('Please input a calculation.');

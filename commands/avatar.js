@@ -1,8 +1,15 @@
 const Discord = require("discord.js");
 const PREFIX = "."
 
+module.exports.command = {
+    name: "avatar",
+    aliases: ["ava", "av"],
+    description: "Shows someone avatar",
+    category: "Util",
+    usage: "avatar"
+}
 // This is the brackets in which the command goes in
-module.exports.run = async (client, message, args) => {
+exports.run = async (client, message, args) => {
     if(!message.content.startsWith(PREFIX)) return;
 
     if(message.mentions.users.first() === client.user) return message.channel.send("You shall not steal my avatar!!")
@@ -31,9 +38,4 @@ module.exports.run = async (client, message, args) => {
         }});
 
         msg.delete();
-}
-module.exports.config = {
-    name: "avatar",
-    description: "Displays avatar."
-	aliases: ['av', 'ava']
 }

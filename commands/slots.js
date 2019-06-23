@@ -2,6 +2,14 @@
 
 const Discord = require('discord.js'); 
 
+module.exports.command = {
+    name: "slots",
+    aliases: ["slots"],
+    description: "To play slots game",
+    category: "Game",
+    usage: "slots"
+}
+
 // Command Handler
 exports.run = (client, message, args) => {
 

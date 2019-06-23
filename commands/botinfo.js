@@ -1,5 +1,13 @@
 const Discord = require("discord.js");
 
+module.exports.command = {
+  name: "botinfo",
+  aliases: ["bi"],
+  description: "Shows all bot info",
+  category: "Util",
+  usage: "botinfo"
+}
+
 module.exports.run = async (client, message, args) => {
     let bicon = client.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()

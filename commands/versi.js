@@ -1,5 +1,13 @@
 const Discord = require('discord.js');
-var version = '1.1.0';
+var version = '1.1.1';
+
+module.exports.command = {
+    name: "versi",
+    aliases: ["ver", "version"],
+    description: "To show you bot's version",
+    category: "Util",
+    usage: "versi"
+}
 
 exports.run = async (client, message, args) => {
       const useruser = 'Command ran by: ' + message.author.username;

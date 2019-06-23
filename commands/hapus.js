@@ -1,5 +1,13 @@
 const Discord = require('discord.js');
 
+module.exports.command = {
+    name: "hapus",
+    aliases: ["del", "delete", "clear", "hap"],
+    description: "To delete your chat",
+    category: "Moderation",
+    usage: "hapus"
+}
+
 exports.run = async (client, message, args) => {
 
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You must specify the number of text to delete');

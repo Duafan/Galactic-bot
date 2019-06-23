@@ -1,3 +1,11 @@
+module.exports.command = {
+    name: "emojify",
+    aliases: ["emo", "emoji"],
+    description: "To make your text become an emoji",
+    category: "Util",
+    usage: "emojify"
+}
+
 const mapping = {
     ' ': '   ',
     '0': ':zero:',

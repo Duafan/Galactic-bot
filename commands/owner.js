@@ -1,5 +1,13 @@
 const Discord = require('discord.js');
  
+module.exports.command = {
+   name: "owner",
+   aliases: ["own"],
+   description: "To show you who created this bot",
+   category: "Util",
+   usage: "owner"
+}
+
 exports.run = async (client, message, args) =>{
    const useruser = 'Command ran by: ' + message.author.username;
    const userurl = message.author.avavtarURL;

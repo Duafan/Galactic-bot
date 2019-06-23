@@ -1,5 +1,13 @@
 const Discord = require('discord.js');
 
+module.exports.command = {
+    name: "rps",
+    aliases: ["rps"],
+    description: "To play rock paper scissors game",
+    category: "Game",
+    usage: "rps"
+}
+
 exports.run = (client, message, args) => {
 
     let rock2 = ['Paper! I win!', 'Scissors! You win!']

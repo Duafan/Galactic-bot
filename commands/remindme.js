@@ -2,6 +2,14 @@
 const Discord = require('discord.js');
 const ms = require('ms');
 
+module.exports.command = {
+    name: "remindme",
+    aliases: ["rm", "remind"],
+    description: "To remind your next activity",
+    category: "Util",
+    usage: "remindme"
+}
+
 // Command Handler - You can use your own
 exports.run = async (client, message, args) => {
 

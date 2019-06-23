@@ -1,43 +1,48 @@
-const Discord = require('discord.js');
-const PREFIX = '.'; 
-const readdirSync = require("fs");
-const stripIndents = require("common-tags");
+const Discord = require("discord.js")
+
+module.exports.command = {
+    name: "help",
+    aliases: ["h"],
+    description: "Shows all bot commands.",
+    category: "Util",
+    usage: "help (command)"
+}
 
 exports.run = async (client, message, args) => {
-        const embed = new Discord.RichEmbed()
-            .setColor(0x43f033)
-            .setAuthor(`${message.guild.me.displayName} Help`, message.guild.iconURL)
-            .setThumbnail(client.user.displayAvatarURL)
+    let commandSize = 0
+    let embed = new Discord.RichEmbed().setColor("RANDOM")
 
-        if(!args[0]) {
-            const categories = readdirSync("./commands/")
-            
-            embed.setDescription(`These are available commands for ${message.guild.displayName}\nThe bot prefix is: **${PREFIX}**`)
-            embed.setFooter(`© ${message.guild.me.displayName} | Total Commands: ${client.commands.size}`, client.user.displayAvatarURL);
+    if (!args[0]) {
+        let categories =
+            client.commands
+                .map(c => c.command.category)
+                .reduce((a, b) => {
+                    if (a.indexOf(b) < 0) a.push(b)
+                    return a
+                }, []).sort()
 
-            categories.forEach(category => {
-                const dir = client.commands.filter(c => c.config.category === category)
-                const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1)
-                try {
-                    embed.addField(`> ${capitalise} [${dir.size}]:`, dir.map(c => `\`${c.config.name}\``).join(" "))
-                } catch(e) {
-                    console.log(e)
-                }
-            })
+        embed.setAuthor("Commands List", message.author.avatarURL)
+        categories.forEach(c => {
+            let commands = client.commands.filter(
+                command => command.command.category == c
+            )
+            commands = commands.map(cmd => cmd.command.name)
+            if (commands.length <= 0) return;
+            commandSize += commands.length
+            embed.addField(c, `\`${commands.sort().join("`, `")}\``)
+        })
+        embed.setFooter(`Total commands: ${commandSize}`)
 
-            return message.channel.send(embed)
-        } else  {
-            let command = client.commands.get(client.aliases.get(args[0].toLowerCase()) || args[0].toLowerCase())
-            if(!command) return message.channel.send(embed.setTitle("Invalid Command.").setDescription(`Do \`${PREFIX}help\` for the list of the commands.`))
-            command = command.config
+        return message.channel.send(embed)
+    } else {
+        let command = client.commands.get(args[0])
+        if (!command) return message.reply("Cant find this command, sorry!")
+        command = command.command
+        embed.setAuthor(`Command help for ${command.name}`, message.author.avatarURL)
+        embed.setDescription(command.description)
+        if (command.aliases.length >= 1) embed.addField("Aliases", `\`${command.aliases.join("`, `")}\``)
+        if (command.usage != null) embed.addField("Usage", command.usage)
 
-            embed.setDescription(stripIndents`The bot's prefix is:\`${PREFIX}\`\n
-            **Command:** ${command.slice(0, 1).toUpperCase() + command.name.slice(1)}
-            **Description:** ${command.description || "No description provided."}
-            **Usage:** ${command.usage ? `\`${PREFIX}${command.name} ${command.usage}\`` : "No usage"}
-            **Accessible by:** ${command.accessableby || "Everyone"}
-            **Alliases:** ${command.aliases ? command.aliases.join(" ") : "None."}`)
-
-            return message.channel.send(embed)
-        }
+        return message.channel.send(embed)
     }
+}

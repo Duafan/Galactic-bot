@@ -1,6 +1,14 @@
 // This commands requires 1 package
 const Discord = require('discord.js'); // We need this to form & send embeds.
 
+module.exports.command = {
+    name: "ping",
+    aliases: ["p"],
+    description: "To show your real ping",
+    category: "Util",
+    usage: "ping"
+}
+
 // Command Handler
 exports.run = async (client, message, args) => {
 

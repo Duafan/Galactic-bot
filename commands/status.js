@@ -1,5 +1,13 @@
 const Discord = require('discord.js');
 
+module.exports.command = {
+    name: "status",
+    aliases: ["status"],
+    description: "To show you bot's status",
+    category: "Util",
+    usage: "status"
+}
+
 exports.run = async (client, message, args) => {
 
     function duration(ms) {

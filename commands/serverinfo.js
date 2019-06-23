@@ -2,6 +2,14 @@
 const Discord = require('discord.js');
 
 // Command Handler - You can use your own
+module.exports.command = {
+    name: "serverinfo",
+    aliases: ["si", "server"],
+    description: "To show you this server information",
+    category: "Util",
+    usage: "serverinfo"
+}
+
 exports.run = async (client, message, args) => {
 
     // Variables
