@@ -26,18 +26,5 @@ exports.run = async (client, message, args) => {
             })
 
             return message.channel.send(embed)
-        } else  {
-            let command = client.commands.get(client.aliases.get(args[0].toLowerCase()) || args[0].toLowerCase())
-            if(!command) return message.channel.send(embed.setTitle("Invalid Command.").setDescription(`Do \`${PREFIX}help\` for the list of the commands.`))
-            command = command.config
-
-            embed.setDescription(stripIndents`The bot's prefix is:\`${PREFIX}\`\n
-            **Command:** ${command.slice(0, 1).toUpperCase() + command.name.slice(1)}
-            **Description:** ${command.description || "No description provided."}
-            **Usage:** ${command.usage ? `\`${PREFIX}${command.name} ${command.usage}\`` : "No usage"}
-            **Accessible by:** ${command.accessableby || "Everyone"}
-            **Alliases:** ${command.aliases ? command.aliases.join(" ") : "None."}`)
-
-            return message.channel.send(embed)
         }
     }
