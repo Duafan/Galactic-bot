@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 module.exports = client
 
-const {loadCommands} = require("./util/handler")
+const { loadCommands } = require("./util/handler")
 loadCommands() 
 
 const PREFIX = '.'; 
