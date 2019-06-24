@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 
 module.exports.command = {
     name: "help",
-    aliases: ["h"],
+    aliases: ["h", "halp", "tolong"],
     description: "Shows all bot commands.",
     category: "Util",
     usage: "help (command)"

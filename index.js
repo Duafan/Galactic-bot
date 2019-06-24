@@ -1,5 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+module.exports = client
+
+const {loadCommands} = require("./util/handler")
+loadCommands() 
 
 const PREFIX = '.'; 
 const ownerID = '335726296091066386';
@@ -42,8 +46,15 @@ client.on('message', message => {
     let cmd = args.shift().toLowerCase();
 
     // Returnt statements
-    if (message.author.bot) return;
+    if (message.author.client) return;
     if (!message.content.startsWith(PREFIX)) return;
+
+    let command;
+    if(client.commands.has(cmd)){
+        command = client.commands.get(cmd)
+    }else if (client.aliases.has(cmd)){
+        command = client.commands.get(client.aliases.get(cmd))
+    }
 
     //Command Handler
     try {
@@ -56,8 +67,7 @@ client.on('message', message => {
             ownerID: ownerID
         }
 
-        let commandFile = require(`./commands/${cmd}.js`); 
-        commandFile.run(client, message, args, ops); 
+        command.run(client, message, args, ops); 
 
     } catch (e) { 
         console.log(e.stack);
