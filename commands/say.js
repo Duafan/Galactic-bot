@@ -20,5 +20,5 @@ module.exports.run = async (client, message, args) => {
         var argresult = args.join(" ");
         message.channel.send(argresult);
 
- message.delete()
+ message.delete();
 }
