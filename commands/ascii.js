@@ -23,7 +23,7 @@ exports.run = (client, message, args) => {
             code: 'md'
 
         });
-
+        message.delete({timeout: 1000});
     }); 
-    message.delete({timeout: 100});
+
 }
