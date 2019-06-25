@@ -20,5 +20,5 @@ module.exports.run = async (client, message, args) => {
         var argresult = args.join(" ");
         message.channel.send(argresult);
 
- msg.delete();
+ message.delete({timeout: 1000});
 }
