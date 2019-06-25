@@ -3,7 +3,7 @@ const PREFIX = "."
 
 module.exports.command = {
     name: "say",
-    aliases: ["say"],
+    aliases: ["bilang"],
     description: "The bot will say what you say",
     category: "Moderation",
     usage: ".say <your text>"
