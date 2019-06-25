@@ -56,13 +56,14 @@ client.on('message', message => {
 
     //Command Handler
     try {
-        command.run(client, message, args, ops); 
-
         // Options
         let ops = {
             ownerID: ownerID
         }
-
+        
+        let commandFile = require(`./commands/${cmd}.js`); 
+        commandFile.run(client, message, args, ops); 
+        command.run(client, message, args, ops); 
 
     } catch (err) { 
         console.log(err.stack);
