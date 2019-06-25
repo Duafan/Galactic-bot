@@ -8,8 +8,6 @@ loadCommands()
 const PREFIX = '.'; 
 const ownerID = '335726296091066386';
 
-var version = '1.0.5';
-
 client.on('ready', () =>{
     console.log('This bot is online!');
     client.user.setActivity('with zexter-', { type: 'STREAMING', url:"https://www.twitch.tv/duafan"}).catch(console.error);
@@ -58,19 +56,16 @@ client.on('message', message => {
 
     //Command Handler
     try {
-
- // Bonus: Auto-Reload (You should move this into it's own command)
-        delete require.cache[require.resolve(`./commands/${cmd}.js`)]; 
+        command.run(client, message, args, ops); 
 
         // Options
         let ops = {
             ownerID: ownerID
         }
 
-        command.run(client, message, args, ops); 
 
-    } catch (e) { 
-        console.log(e.stack);
+    } catch (err) { 
+        console.log(err.stack);
     }
 
 });
