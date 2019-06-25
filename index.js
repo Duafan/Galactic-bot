@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 module.exports = client
 
-const PREFIX = '/'; 
+const PREFIX = ';'; 
 const ownerID = '335726296091066386';
 
 const { loadCommands } = require("./util/handler")
@@ -38,7 +38,7 @@ client.on('guildMemberRemove', member =>{
 
 //Listener events
 client.on("message", async (message) => {
-    if (message.author.bot) return;
+    if (message.author.client) return;
     if (!message.content.startsWith(PREFIX)) return;
 
     let args = message.content.slice(PREFIX.length).trim().split(/ +/)
