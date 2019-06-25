@@ -5,7 +5,7 @@ const superagent = require('superagent');
 module.exports.command = {
     name: "dog",
     aliases: ["anjing"],
-    description: "To shows dog game picture",
+    description: "To shows dog picture",
     category: "Fun",
     usage: ".dog"
 }
