@@ -19,4 +19,6 @@ module.exports.run = async (client, message, args) => {
         var args = message.content.split(' ').slice(1);
         var argresult = args.join(" ");
         message.channel.send(argresult);
+
+ message.delete()
 }

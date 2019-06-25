@@ -10,7 +10,7 @@ loadCommands()
 
 client.on('ready', () =>{
     console.log('This bot is online!');
-    client.user.setActivity('with zexter-', { type: 'STREAMING', url:"https://www.twitch.tv/duafan"}).catch(console.error);
+    client.user.setActivity('no more zexter-', { type: 'STREAMING', url:"https://www.twitch.tv/duafan"}).catch(console.error);
 })
 
 const serverStats = {
