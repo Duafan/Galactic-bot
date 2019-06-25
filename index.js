@@ -37,25 +37,31 @@ client.on('guildMemberRemove', member =>{
 });
 
 //Listener events
-client.on("message", async (message) => {
-    if (message.author.client) return;
+client.on('message', message => {
+
+    // Variables
+    let args = message.content.slice(PREFIX.length).trim().split(' ');
+    let cmd = args.shift().toLowerCase();
+
+    // Return statements
+    if (message.author.bot) return;
     if (!message.content.startsWith(PREFIX)) return;
 
-    let args = message.content.slice(PREFIX.length).trim().split(/ +/)
-    let cmd = args.shift().toLowerCase()
-
-    let command;
-    if (client.commands.has(cmd)) {
-        command = client.commands.get(cmd)
-    } else if (client.aliases.has(cmd)) {
-        command = client.commands.get(client.aliases.get(cmd))
-    } else return
-
+    //Command Handler
     try {
-        command.run(client, message, args)
-    } catch (err) {
-        console.log(err)
+
+        delete require.cache[require.resolve(`./commands/${cmd}.js`)];
+
+        let commandFile = require(`./commands/${cmd}.js`);
+        commandFile.run(client, message, args);
+
+    } catch (e) {
+        console.log(e.stack)
     }
-})
+
+    
+    }
+
+)
 
 client.login(process.env.token);
