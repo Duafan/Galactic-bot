@@ -25,5 +25,5 @@ exports.run = (client, message, args) => {
         });
 
     }); 
-    message.delete();
+    message.delete({timeout: 100});
 }
