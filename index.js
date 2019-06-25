@@ -44,7 +44,7 @@ client.on('message', message => {
     let cmd = args.shift().toLowerCase();
 
     // Return statements
-    if (message.author.client) return;
+    if (message.author.bot) return;
     if (!message.content.startsWith(PREFIX)) return;
 
     let command;
