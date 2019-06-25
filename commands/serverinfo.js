@@ -16,11 +16,13 @@ exports.run = async (client, message, args) => {
     let icon = message.guild.iconURL;
     let embed = new Discord.RichEmbed() // or Discord.MessageEmbed
         .setDescription('Server Info')
-        .setColor('RANDOM')
+        .setColor('0x43f033')
         .setThumbnail(icon)
         .addField('Server Name', message.guild.name)
         .addField('Created on', message.guild.createdAt)
         .addField('You joined', message.member.joinedAt)
+        .addField("Server region", message.guild.region)
+        .addField("Guild owner", message.guild.owner)
         .addField('Total Members', message.guild.memberCount);
 
     // Send embed

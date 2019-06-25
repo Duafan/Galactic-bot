@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 module.exports = client
 
-const PREFIX = ';'; 
+const PREFIX = '.'; 
 const ownerID = '335726296091066386';
 
 const { loadCommands } = require("./util/handler")
@@ -40,21 +40,28 @@ client.on('guildMemberRemove', member =>{
 client.on('message', message => {
 
     // Variables
-    let args = message.content.slice(PREFIX.length).trim().split(' ');
+    let args = message.content.slice(PREFIX.length).trim().split(/ +/)
     let cmd = args.shift().toLowerCase();
 
     // Return statements
     if (message.author.bot) return;
     if (!message.content.startsWith(PREFIX)) return;
 
+    let command;
+    if (client.commands.has(cmd)) {
+        command = client.commands.get(cmd)
+    } else if (client.aliases.has(cmd)) {
+        command = client.commands.get(client.aliases.get(cmd))
+    } else return
+
     //Command Handler
     try {
 
-        delete require.cache[require.resolve(`./commands/${cmd}.js`)];
+        let ops = {
+            ownerID: ownerID
+        }
 
-        let commandFile = require(`./commands/${cmd}.js`);
-        commandFile.run(client, message, args);
-
+        command.run(client, message, args, ops)
     } catch (e) {
         console.log(e.stack)
     }

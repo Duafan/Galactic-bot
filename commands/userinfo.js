@@ -8,7 +8,7 @@ module.exports.command = {
     aliases: ["ui"],
     description: "To show you someone's information",
     category: "Util",
-    usage: "userinfo"
+    usage: "userinfo @user"
 }
 
 exports.run = async (client, message, args) => {
@@ -25,16 +25,16 @@ exports.run = async (client, message, args) => {
 
      // Forming the Embed
      const embed = new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
-        .setColor('RANDOM') // I just put random in here, but you can chnage it to anything else.
+        .setColor('0x43f033') // I just put random in here, but you can chnage it to anything else.
         .setThumbnail(user.avatarURL)
         .setTitle(`${user.username}#${user.discriminator}`)
-        .addField('ID:', `${user.id}`, true)
-        .addField('Nickname:', `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
-        .addField('Created at:', `${moment.utc(user.createdAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
-        .addField('Joined server:', `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
-        .addField('Status:', `${user.presence.status}`, true)
-        .addField('Game:', `${user.presence.game ? user.presence.game.name : 'None'}`, true)
-        .addField('Roles:', member.roles.map(roles => `${roles.name}`).join(', '), true)
+        .addField('ID', `${user.id}`, true)
+        .addField('Nickname', `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
+        .addField('Created at', `${moment.utc(user.createdAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
+        .addField('Joined server', `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
+        .addField('Status', `${user.presence.status}`, true)
+        .addField('Game', `${user.presence.game ? user.presence.game.name : 'None'}`, true)
+        .addField('Roles', member.roles.map(roles => `${roles.name}`).join(', '), true)
         .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
 
     // Send the Embed

@@ -30,7 +30,7 @@ exports.run = async (client, message, args) => {
                                   .setAuthor(`Winner: ${winnerMessage.author.tag}`, winnerMessage.author.displayAvatarURL)
                                   .setTitle(`Correct Answer: \`${winnerMessage.content}\``)
                                   .setFooter(`Question: ${item.q}`)
-                                  .setColor('RANDOM')
+                                  .setColor('0x43f033')
                                 })
 
   } catch (_) {

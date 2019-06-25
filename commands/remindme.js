@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
     let reminder = args.slice(1).join(" "); 
 
     let remindEmbed = new Discord.RichEmbed() 
-        .setColor('#ffffff')
+        .setColor('0x43f033')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL)
         .addField('Reminder', `\`\`\`${reminder}\`\`\``) 
         .addField('Time', `\`\`\`${reminderTime}\`\`\``) 
@@ -35,7 +35,7 @@ exports.run = async (client, message, args) => {
 
     setTimeout(function() {
         let remindEmbed = new Discord.RichEmbed()
-            .setColor('#ffffff')
+            .setColor('#00e9ff')
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL)
             .addField('Reminder', `\`\`\`${reminder}\`\`\``)
             .setTimestamp()

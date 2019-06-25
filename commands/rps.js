@@ -21,19 +21,19 @@ exports.run = (client, message, args) => {
 
 let rock = new Discord.RichEmbed()
     .setAuthor('Rock, Paper, Scissors')
-    .setColor(0x6B5858)
+    .setColor(0x43f033)
     .addField('You choose', `${args[0]}`)
     .addField('I choose', rock2[rock1])
 
 let paper = new Discord.RichEmbed()
     .setAuthor('Rock, Paper, Scissors')
-    .setColor(0x6B5858)
+    .setColor(0x43f033)
     .addField('You choose', `${args[0]}`)
     .addField('I choose', paper2[paper1])
 
 let scissors = new Discord.RichEmbed()
     .setAuthor('Rock, Paper, Scissors')
-    .setColor(0x6B5858)
+    .setColor(0x43f033)
     .addField('You choose', `${args[0]}`)
     .addField('I choose', scissors2[scissors1])
 

@@ -25,7 +25,7 @@ exports.run = (client, message, args) => {
             .setFooter('You won!', icon)
             .setTitle(':slot_machine: Slots :slot_machine:')
             .addField('Result:', slots[result1] + slots[result2] + slots[result3], true)
-            .setColor(0xF4E842)
+            .setColor(0x43f033)
         message.channel.send(wEmbed);
 
     } else {
@@ -34,7 +34,7 @@ exports.run = (client, message, args) => {
             .setFooter('You lost!', icon)
             .setTitle(':slot_machine: Slots :slot_machine:')
             .addField('Result:', slots[result1] + slots[result2] + slots[result3], true)
-            .setColor(0xF4E842)
+            .setColor(0x43f033)
         message.channel.send(lEmbed);
     }
 } 

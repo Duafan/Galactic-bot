@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const PREFIX = ";"
+const PREFIX = "."
 
 module.exports.command = {
     name: "avatar",
@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
     let target = message.mentions.users.first() || message.author;
 
         message.channel.send({embed: {
-        color: 1339135,
+        color: 0x43f033,
         image: {
             url: (target.displayAvatarURL)
           },

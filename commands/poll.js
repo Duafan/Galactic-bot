@@ -19,7 +19,7 @@ exports.run = async (client, message, args, tools) => {
     if (!args[0]) return message.channel.send('Proper Usage: <prefix>poll question');
 
     const embed = new Discord.RichEmbed()
-        .setColor(0xffffff)
+        .setColor(0x43f033)
         .setFooter('React to vote.')
         .setDescription(args.join(' '))
         .setTitle(`Poll created by ${message.author.username}`);
