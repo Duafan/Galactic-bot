@@ -6,7 +6,7 @@ module.exports.command = {
     aliases: ["say"],
     description: "The bot will say what you say",
     category: "Moderation",
-    usage: "say"
+    usage: ".say <your text>"
 }
 
 // This is the brackets in which the command goes in

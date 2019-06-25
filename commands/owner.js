@@ -5,7 +5,7 @@ module.exports.command = {
    aliases: ["own"],
    description: "To show you who created this bot",
    category: "Util",
-   usage: "owner"
+   usage: ".owner"
 }
 
 exports.run = async (client, message, args) =>{

@@ -5,7 +5,7 @@ module.exports.command = {
     aliases: ["rps"],
     description: "To play rock paper scissors game",
     category: "Game",
-    usage: "rps"
+    usage: ".rps <rock, paper, or scissors>"
 }
 
 exports.run = (client, message, args) => {

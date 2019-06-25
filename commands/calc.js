@@ -6,7 +6,7 @@ module.exports.command = {
     aliases: ["ca", "c", "kal"],
     description: "Helping you to solve your math problems.",
     category: "Util",
-    usage: "calc"
+    usage: ".calc <your math problems>"
 }
 
 exports.run = (client, message, args, tools) => {

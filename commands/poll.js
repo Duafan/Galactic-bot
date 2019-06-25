@@ -3,9 +3,9 @@ const Discord = require('discord.js');
 module.exports.command = {
     name: "poll",
     aliases: ["polling"],
-    description: "Make a poll",
+    description: "To Make a poll",
     category: "Moderation",
-    usage: "poll"
+    usage: ".poll <your poll question>"
 }
 
 exports.run = async (client, message, args, tools) => {

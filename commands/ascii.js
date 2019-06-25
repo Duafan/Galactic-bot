@@ -5,7 +5,7 @@ module.exports.command = {
     aliases: ["asc", "as"],
     description: "Make an ascii text",
     category: "Util",
-    usage: "ascii"
+    usage: ".ascii <your text>"
 }
 
 // Command Handler - You can use your own

@@ -7,7 +7,7 @@ module.exports.command = {
     aliases: ["si", "server"],
     description: "To show you this server information",
     category: "Util",
-    usage: "serverinfo"
+    usage: ".serverinfo"
 }
 
 exports.run = async (client, message, args) => {

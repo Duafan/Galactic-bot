@@ -7,7 +7,7 @@ module.exports.command = {
     aliases: ["slots"],
     description: "To play slots game",
     category: "Game",
-    usage: "slots"
+    usage: ".slots"
 }
 
 // Command Handler

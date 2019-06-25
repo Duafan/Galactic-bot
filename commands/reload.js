@@ -3,7 +3,7 @@ module.exports.command = {
     aliases: ["rel", "r"],
     description: "Reload the code",
     category: "Developer",
-    usage: "reload"
+    usage: ".reload"
 }
 
 exports.run = (client, message, args, ops) => {

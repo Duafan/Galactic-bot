@@ -5,7 +5,7 @@ module.exports.command = {
   aliases: ["bi"],
   description: "Shows all bot info",
   category: "Util",
-  usage: "botinfo"
+  usage: ".botinfo"
 }
 
 module.exports.run = async (client, message, args) => {

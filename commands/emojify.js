@@ -3,7 +3,7 @@ module.exports.command = {
     aliases: ["emo", "emoji"],
     description: "To make your text become an emoji",
     category: "Util",
-    usage: "emojify"
+    usage: ".emojify <your text>"
 }
 
 const mapping = {

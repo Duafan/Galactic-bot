@@ -5,7 +5,7 @@ module.exports.command = {
     aliases: ["del", "delete", "clear", "hap"],
     description: "To delete your chat",
     category: "Moderation",
-    usage: "hapus"
+    usage: ".hapus <the number of messages that you want to delete>"
 }
 
 exports.run = async (client, message, args) => {

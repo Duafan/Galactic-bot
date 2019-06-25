@@ -3,7 +3,7 @@ module.exports.command = {
     aliases: ["hi"],
     description: "hi",
     category: "Util",
-    usage: "hi"
+    usage: ".hi"
 }
 
 exports.run = async (client, message, args) => {

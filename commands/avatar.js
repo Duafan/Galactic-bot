@@ -6,7 +6,7 @@ module.exports.command = {
     aliases: ["ava", "av"],
     description: "Shows someone avatar",
     category: "Util",
-    usage: "avatar"
+    usage: ".avatar <@user>"
 }
 // This is the brackets in which the command goes in
 exports.run = async (client, message, args) => {

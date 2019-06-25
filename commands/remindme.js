@@ -7,7 +7,7 @@ module.exports.command = {
     aliases: ["rm", "remind"],
     description: "To remind your next activity",
     category: "Util",
-    usage: "remindme"
+    usage: ".remindme <time> <your next activity>"
 }
 
 // Command Handler - You can use your own

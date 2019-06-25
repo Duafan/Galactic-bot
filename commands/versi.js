@@ -6,7 +6,7 @@ module.exports.command = {
     aliases: ["ver", "version"],
     description: "To show you bot's version",
     category: "Util",
-    usage: "versi"
+    usage: ".versi"
 }
 
 exports.run = async (client, message, args) => {

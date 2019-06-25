@@ -8,7 +8,7 @@ module.exports.command = {
     aliases: ["ui"],
     description: "To show you someone's information",
     category: "Util",
-    usage: "userinfo @user"
+    usage: ".userinfo <@user>"
 }
 
 exports.run = async (client, message, args) => {

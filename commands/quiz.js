@@ -5,7 +5,7 @@ module.exports.command = {
   aliases: ["kuis"],
   description: "There are only 3 questions",
   category: "Game",
-  usage: "quiz"
+  usage: ".quiz"
 }
 // Command Handler
 exports.run = async (client, message, args) => {
