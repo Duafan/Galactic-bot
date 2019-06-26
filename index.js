@@ -8,10 +8,20 @@ const ownerID = '335726296091066386';
 const { loadCommands } = require("./util/handler")
 loadCommands()
 
+let statuses = ['The bot has been updated', '.help or .h', '.help <command>', 'no more zexter-', 'see you soon']
+
 client.on('ready', () =>{
-    console.log('This bot is online!');
-    client.user.setActivity('no more zexter-', { type: 'STREAMING', url:"https://www.twitch.tv/duafan"}).catch(console.error);
+    setInterval(function() {
+        let status = statuses[Math.floor(Math.random() * statuses.length)];
+        client.user.setActivity(status, {type: "STREAMING", url:"https://www.twitch.tv/duafan"});
+
+    }, 3000)
 })
+
+// client.on('ready', () =>{
+//     console.log('This bot is online!');
+//     client.user.setActivity('no more zexter-', { type: 'STREAMING', url:"https://www.twitch.tv/duafan"}).catch(console.error);
+// })
 
 const serverStats = {
     guildID: '335722331949367296',
