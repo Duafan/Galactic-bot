@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
         let mEmbed = new Discord.RichEmbed()
         .setColor(0x43f033)
         .setAuthor(`MEMES!`, message.guild.iconURL)
-        .setImage(body.data.image)
+        .setImage(body.image)
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
 
