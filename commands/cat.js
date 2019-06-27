@@ -3,7 +3,7 @@ const superagent = require("superagent")
 
 module.exports.command = {
     name: "cat",
-    aliases: ["cat"],
+    aliases: ["cat", "kitten"],
     description: "Shows random cat images",
     category: "Fun",
     usage: ".cat"
@@ -16,14 +16,14 @@ exports.run = async (client, message, args) => {
     
     if(!{body}) return message.channel.send("Something went wrong, please try again!")
 
-        let embed = new Discord.RichEmbed()
+        let cEmbed = new Discord.RichEmbed()
         .setColor(0x43f033)
         .setAuthor(`CATS!`, message.guild.iconURL)
         .setImage(body.file)
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
 
-        message.channel.send({embed: embed})
+        message.channel.send({embed: cEmbed})
 
         msg.delete();
 

@@ -17,14 +17,14 @@ exports.run = async (client, message, args) => {
     
     if(!{body}) return message.channel.send("Something went wrong, please try again!")
 
-        let embed = new Discord.RichEmbed()
+        let mEmbed = new Discord.RichEmbed()
         .setColor(0x43f033)
         .setAuthor(`MEMES!`, message.guild.iconURL)
         .setImage(body.file)
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
 
-        message.channel.send({embed: embed})
+        message.channel.send({embed: mEmbed})
 
         msg.delete();
 }
