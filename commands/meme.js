@@ -13,14 +13,14 @@ exports.run = async (client, message, args) => {
     let msg = await message.channel.send("Generating...");
 
     let{body} = await superagent
-    .get(`https://apis.duncte123.me/meme`)
+    .get(`https://apis.duncte123.me/meme?nsfw=false`)
     
     if(!{body}) return message.channel.send("Something went wrong, please try again!")
 
         let mEmbed = new Discord.RichEmbed()
         .setColor(0x43f033)
         .setAuthor(`MEMES!`, message.guild.iconURL)
-        .setImage(body.data)
+        .setImage(body.data.image)
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
 
