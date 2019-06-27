@@ -9,8 +9,8 @@ module.exports.command = {
     usage: ".meme"
 }
 
-exports.run = (client, message, args) => {
-    let msg = await message.channel.send("Generating...")
+exports.run = async (client, message, args) => {
+    let msg = await message.channel.send("Generating...");
 
     let{body} = await superagent
     .get(`https://apis.duncte123.me/meme`)
@@ -23,6 +23,8 @@ exports.run = (client, message, args) => {
         .setImage(body.file)
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
+
+        message.channel.send({embed: embed})
 
         msg.delete();
 }

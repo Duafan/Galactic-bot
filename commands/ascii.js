@@ -9,7 +9,7 @@ module.exports.command = {
 }
 
 // Command Handler - You can use your own
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
 
     ascii.font(args.join(' '), 'Doom', function(rendered) {
 

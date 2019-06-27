@@ -11,7 +11,7 @@ module.exports.command = {
 }
 
 // Command Handler
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
 
     let slots = ["🍎", "🍌", "🍒", "🍓", "🍈"];
     let result1 = Math.floor((Math.random() * slots.length));

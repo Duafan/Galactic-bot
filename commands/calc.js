@@ -9,7 +9,7 @@ module.exports.command = {
     usage: ".calc <your math problems>"
 }
 
-exports.run = (client, message, args, tools) => {
+exports.run = async (client, message, args, tools) => {
 
     if (!args[0]) return message.channel.send('Please input a calculation.');
     let resp;

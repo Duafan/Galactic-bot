@@ -8,8 +8,8 @@ module.exports.command = {
     category: "Fun",
     usage: ".cat"
 }
-exports.run = (client, message, args) => {
-    let msg = await message.channel.send("Generating...")
+exports.run = async (client, message, args) => {
+    let msg = await message.channel.send("Generating...");
 
     let{body} = await superagent
     .get(`http://aws.random.cat/meow`)
@@ -22,6 +22,8 @@ exports.run = (client, message, args) => {
         .setImage(body.file)
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
+
+        message.channel.send({embed: embed})
 
         msg.delete();
 

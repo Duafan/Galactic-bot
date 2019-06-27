@@ -6,7 +6,7 @@ module.exports.command = {
     usage: ".reload"
 }
 
-exports.run = (client, message, args, ops) => {
+exports.run = async (client, message, args, ops) => {
     
     if (message.author.id !== ops.ownerID) return message.channel.send('Sorry, only the bot owner can use this command.');
 

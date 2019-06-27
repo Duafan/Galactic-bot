@@ -8,7 +8,7 @@ module.exports.command = {
     usage: ".rps <rock, paper, or scissors>"
 }
 
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
 
     let rock2 = ['Paper! I win!', 'Scissors! You win!']
     let rock1 = Math.floor(Math.random() * rock2.length);
