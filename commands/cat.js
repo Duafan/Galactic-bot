@@ -3,7 +3,7 @@ const superagent = require("superagent")
 
 module.exports.command = {
     name: "cat",
-    aliases: ["cat", "kitten"],
+    aliases: ["cat", "kitten", "cats"],
     description: "Shows random cat images",
     category: "Fun",
     usage: ".cat"
