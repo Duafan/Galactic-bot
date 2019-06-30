@@ -45,7 +45,7 @@ client.on('guildMemberAdd', member =>{
     .setTimestamp()
     .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
 
-    channel.send(embedW)
+    message.channel.send({embedW});
 });
 
 client.on('guildMemberRemove', member =>{
@@ -63,7 +63,7 @@ client.on('guildMemberRemove', member =>{
     .setTimestamp()
     .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
 
-    channel.send(embedB)
+    message.channel.send({embedB});
 });
 
 //Listener events
