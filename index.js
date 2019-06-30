@@ -17,19 +17,45 @@ client.on('ready', () =>{
         client.user.setActivity(status, {type: "STREAMING", url:"https://www.twitch.tv/duafan"}).catch(console.error);
 
     }, 3000)
-})
 
-// client.on('ready', () =>{
-//     console.log('This bot is online!');
-//     client.user.setActivity('no more zexter-', { type: 'STREAMING', url:"https://www.twitch.tv/duafan"}).catch(console.error);
-// })
 
-const serverStats = {
-    guildID: '335722331949367296',
-    totalUserID: '589812086935388161',
-    memberCount: '589812154065223690',
-    botCountID: '589812223388549140',
-};
+    // Get our server
+    const guild = client.guilds.get('335722331949367296');
+
+    // Get our stats channels
+    const totalUsers = client.channels.get('589812086935388161');
+    const memberUsers = client.channels.get('589812154065223690');
+    const botUsers = client.channels.get('589812223388549140');
+
+    // Check every 30 seconds for changes
+    setInterval(function() {
+      console.log('Getting stats update..')
+
+      //Get actual counts
+      var userCount = guild.memberCount;
+      var memberCount = guild.members.filter(m => !m.user.bot).size;
+      var botCount = guild.members.filter(m => m.user.bot).size;
+        
+      // Log counts for debugging
+      console.log("Total Users : " + userCount);
+      console.log("Member Count : " + memberCount);
+      console.log("Bot Count : " + botCount);
+
+      // Set channel names
+      totalUsers.setName("Total Users : " + userCount)
+      .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
+      .catch(console.error);
+
+      memberUsers.setName("Member Count : " + memberCount)
+      .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
+      .catch(console.error);
+
+      botUsers.setName("Bot Count : " + botCount)
+      .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
+      .catch(console.error);
+      }, 30000)
+
+});
 
 client.on('guildMemberAdd', member =>{
 
