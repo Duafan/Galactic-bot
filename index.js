@@ -11,9 +11,10 @@ loadCommands()
 let statuses = ['The bot has been updated', '.help or .h', '.help <command>', 'no more zexter-', 'see you soon', "i'll be back (maybe)"]
 
 client.on('ready', () =>{
+    console.log('This bot is online!');
     setInterval(function() {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
-        client.user.setActivity(status, {type: "STREAMING", url:"https://www.twitch.tv/duafan"});
+        client.user.setActivity(status, {type: "STREAMING", url:"https://www.twitch.tv/duafan"}).catch(console.error);
 
     }, 3000)
 })
@@ -35,17 +36,17 @@ client.on('guildMemberAdd', member =>{
     const channel = member.guild.channels.find(channel => channel.name === "welcome");
     if(!channel) return;
 
-    // const embedW = new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
-    // .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
-    // .setThumbnail(member.avatarURL)
-    // .setTitle(`MEMBER BARU!`)
-    // .addField(`Selamat datang di Galactic Discord Server, ${member}! Selamat bersenang-senang! :slight_smile: `,  true)
-    // .addField(`ID`, `${member.id}`, true)
-    // .addField(`Anda member ke`, message.guild.memberCount, true)
-    // .setTimestamp()
-    // .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
-
-    channel.send(`Selamat datang di Galactic Discord Server, ${member}! Selamat bersenang-senang! :slight_smile: `);
+    channel.send({embed: new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
+                    .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
+                    .setThumbnail(member.user.avatarURL)
+                    .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝘽𝘼𝙍𝙐!`)
+                    .addField(`Selamat datang di Galactic Discord Server, **\`${member.user.username}#${member.user.discriminator}\`** !`,' Selamat bersenang-senang! :slight_smile:',  true)
+                    .addField(`ID`, `${member.user.id}`, true)
+                    .addField('Anda member ke', member.guild.memberCount)
+                    .setTimestamp()
+                    .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
+                });
+        
 });
 
 client.on('guildMemberRemove', member =>{
@@ -53,17 +54,16 @@ client.on('guildMemberRemove', member =>{
     const channel = member.guild.channels.find(channel => channel.name === "goodbye");
     if(!channel) return;
 
-    // const embedB = new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
-    // .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
-    // .setThumbnail(member.avatarURL)
-    // .setTitle(`MEMBER KELUAR!`)
-    // .addField(`Sampai jumpa ${member.username}#${member.discriminator}! Terima kasih. :upside_down: `,  true)
-    // .addField(`ID`, `${member.id}`, true)
-    // .addField(`Member saat ini`, message.guild.memberCount, true)
-    // .setTimestamp()
-    // .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
-
-    channel.send(`Sampai jumpa ${member.user.username}! Terima kasih. :upside_down: `);
+    channel.send({embed: new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
+                    .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
+                    .setThumbnail(member.user.avatarURL)
+                    .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝙆𝙀𝙇𝙐𝘼𝙍!`)
+                    .addField(`Sampai jumpa **\`${member.user.username}#${member.user.discriminator}\`** !`,  'Terima kasih. :upside_down: ')
+                    .addField(`ID`, `${member.user.id}`)
+                    .addField('Member saat ini', member.guild.memberCount)
+                    .setTimestamp()
+                    .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
+                });
 });
 
 //Listener events
