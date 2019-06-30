@@ -63,7 +63,7 @@ client.on('guildMemberRemove', member =>{
     // .setTimestamp()
     // .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
 
-    channel.send(`Sampai jumpa ${member}! Terima kasih. :upside_down: `);
+    channel.send(`Sampai jumpa ${member.user.username}! Terima kasih. :upside_down: `);
 });
 
 //Listener events
