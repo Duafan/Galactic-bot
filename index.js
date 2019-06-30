@@ -8,7 +8,7 @@ const ownerID = '335726296091066386';
 const { loadCommands } = require("./util/handler")
 loadCommands()
 
-let statuses = ['The bot has been updated', '.help or .h', '.help <command>', 'no more zexter-', 'see you soon', "i'll be back (maybe)"]
+let statuses = ['The bot has been updated', '.help or .h', '.help <command>', 'no more zexter-']
 
 client.on('ready', () =>{
     console.log('This bot is online!');
