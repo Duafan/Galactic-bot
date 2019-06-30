@@ -36,7 +36,7 @@ client.on('guildMemberAdd', member =>{
     if(!channel) return;
 
     const embedW = new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
-    .setColor('RANDOM') // I just put random in here, but you can chnage it to anything else.
+    .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
     .setThumbnail(user.avatarURL)
     .setTitle(`MEMBER BARU!`)
     .addField(`Selamat datang di Galactic Discord Server, ${member}! Selamat bersenang-senang! :slight_smile: `,  true)
@@ -45,7 +45,7 @@ client.on('guildMemberAdd', member =>{
     .setTimestamp()
     .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
 
-    message.channel.send({embedW});
+    channel.send({embedW});
 });
 
 client.on('guildMemberRemove', member =>{
@@ -54,7 +54,7 @@ client.on('guildMemberRemove', member =>{
     if(!channel) return;
 
     const embedB = new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
-    .setColor('RANDOM') // I just put random in here, but you can chnage it to anything else.
+    .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
     .setThumbnail(user.avatarURL)
     .setTitle(`MEMBER KELUAR!`)
     .addField(`Sampai jumpa ${user.username}#${user.discriminator}! Terima kasih. :upside_down: `,  true)
@@ -63,7 +63,7 @@ client.on('guildMemberRemove', member =>{
     .setTimestamp()
     .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
 
-    message.channel.send({embedB});
+    channel.send({embedB});
 });
 
 //Listener events
