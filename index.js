@@ -27,7 +27,7 @@ client.on('ready', () =>{
     const memberUsers = client.channels.get('589812154065223690');
     const botUsers = client.channels.get('589812223388549140');
 
-    // Check every 30 seconds for changes
+    // Check every 1 seconds for changes
     setInterval(function() {
       console.log('Getting stats update..')
 
@@ -53,7 +53,7 @@ client.on('ready', () =>{
       botUsers.setName("Bot Count : " + botCount)
       .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
       .catch(console.error);
-      }, 30000)
+      }, 1000)
 
 });
 
@@ -68,7 +68,7 @@ client.on('guildMemberAdd', member =>{
                     .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝘽𝘼𝙍𝙐!`)
                     .addField(`Selamat datang di Galactic Discord Server, **\`${member.user.username}#${member.user.discriminator}\`** !`,' Selamat bersenang-senang! :slight_smile:',  true)
                     .addField(`ID`, `${member.user.id}`, true)
-                    .addField('Anda member ke', member.guild.memberCount)
+                    .addField(`Anda member ke`, `**\`${member.guild.memberCount}\`**`, true)
                     .setTimestamp()
                     .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
                 });
@@ -84,9 +84,9 @@ client.on('guildMemberRemove', member =>{
                     .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
                     .setThumbnail(member.user.avatarURL)
                     .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝙆𝙀𝙇𝙐𝘼𝙍!`)
-                    .addField(`Sampai jumpa **\`${member.user.username}#${member.user.discriminator}\`** !`,  'Terima kasih. :upside_down: ')
-                    .addField(`ID`, `${member.user.id}`)
-                    .addField('Member saat ini', member.guild.memberCount)
+                    .addField(`Sampai jumpa **\`${member.user.username}#${member.user.discriminator}\`** !`,  'Terima kasih. :upside_down: ', true)
+                    .addField(`ID`, `${member.user.id}`, true)
+                    .addField('Tanggal Join', member.joinedAt, true)
                     .setTimestamp()
                     .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
                 });
