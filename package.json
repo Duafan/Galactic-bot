@@ -19,6 +19,8 @@
     "fs": "0.0.1-security",
     "mathjs": "^6.0.2",
     "moment": "^2.24.0",
-    "superagent": "^5.1.0"
+    "node-opus": "^0.3.2",
+    "superagent": "^5.1.0",
+    "ytdl-core": "^0.29.3"
   }
 }
