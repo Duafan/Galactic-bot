@@ -16,11 +16,14 @@
   "dependencies": {
     "ascii-art": "^1.5.1",
     "discord.js": "^11.5.1",
+    "ffmpeg": "0.0.4",
     "fs": "0.0.1-security",
     "mathjs": "^6.0.2",
     "moment": "^2.24.0",
     "node-opus": "^0.3.2",
+    "opusscript": "0.0.6",
     "superagent": "^5.1.0",
+    "yt-search": "^0.4.1",
     "ytdl-core": "^0.29.3"
   }
 }
