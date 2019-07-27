@@ -4,6 +4,9 @@ module.exports = client
 
 const PREFIX = '.'; 
 const ownerID = '335726296091066386';
+/* global Map*/
+/* global client*/
+const active = new Map();
 
 const { loadCommands } = require("./util/handler")
 loadCommands()
@@ -114,7 +117,8 @@ client.on('message', message => {
     try {
 
         let ops = {
-            ownerID: ownerID
+            ownerID: ownerID,
+            active: active
         }
 
         command.run(client, message, args, ops)
