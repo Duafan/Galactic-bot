@@ -3,7 +3,7 @@ const Discord = require('discord.js'); // We need this to form & send embeds.
 
 module.exports.command = {
     name: "ping",
-    aliases: ["p"],
+    aliases: ["ping"],
     description: "Shows the current ping",
     category: "Util",
     usage: ".ping"

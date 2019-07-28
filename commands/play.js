@@ -1,6 +1,6 @@
 module.exports.command = {
     name: "play",
-    aliases: ["pl"],
+    aliases: ["p", "pl"],
     description: "Play music",
     category: "Music",
     usage: ".play"
