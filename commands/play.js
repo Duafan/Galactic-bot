@@ -39,7 +39,7 @@ exports.run = async (client, message, args, ops) => {
 
     if (!data.dispatcher) play(client, ops, data);
     else {
-        message.channel.send(`:notes:  Menambahkan lagu ke playlist: **${info.title}** | Requested by: **${message.author.username}** `)
+        message.channel.send(`:notes:  Menambahkan lagu ke playlist: **${data.title}** | Requested by: **${message.author.username}** `)
     }
 
     ops.active.set(message.guild.id, data);
