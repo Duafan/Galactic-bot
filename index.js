@@ -30,7 +30,7 @@ client.on('ready', () =>{
     const memberUsers = client.channels.get('589812154065223690');
     const botUsers = client.channels.get('589812223388549140');
 
-    // Check every 1 seconds for changes
+    // Check every 10 seconds for changes
     setInterval(function() {
       console.log('Getting stats update..')
 
@@ -56,7 +56,7 @@ client.on('ready', () =>{
       botUsers.setName("🤖Bot Count : " + botCount)
       .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
       .catch(console.error);
-      }, 1000)
+      }, 10000)
 
 });
 
