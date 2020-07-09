@@ -62,7 +62,7 @@ client.on('ready', () =>{
 
 client.on('guildMemberAdd', member =>{
 
-    const channel = member.guild.channels.find(channel => channel.name === "welcome", "welcome🎉");
+    const channel = member.guild.channels.find(channel => channel.name === "welcome🎉");
     if(!channel) return;
 
     channel.send({embed: new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
@@ -80,7 +80,7 @@ client.on('guildMemberAdd', member =>{
 
 client.on('guildMemberRemove', member =>{
    
-    const channel = member.guild.channels.find(channel => channel.name === "goodbye", "goodbye👋");
+    const channel = member.guild.channels.find(channel => channel.name === "goodbye👋");
     if(!channel) return;
 
     channel.send({embed: new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
