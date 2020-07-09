@@ -40,20 +40,20 @@ client.on('ready', () =>{
       var botCount = guild.members.filter(m => m.user.bot).size;
         
       // Log counts for debugging
-      console.log("Total Users : " + userCount);
-      console.log("Member Count : " + memberCount);
-      console.log("Bot Count : " + botCount);
+      console.log("👫🤖Total Users : " + userCount);
+      console.log("👫Member Count : " + memberCount);
+      console.log("🤖Bot Count : " + botCount);
 
       // Set channel names
-      totalUsers.setName("Total Users : " + userCount)
+      totalUsers.setName("👫🤖Total Users : " + userCount)
       .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
       .catch(console.error);
 
-      memberUsers.setName("Member Count : " + memberCount)
+      memberUsers.setName("👫Member Count : " + memberCount)
       .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
       .catch(console.error);
 
-      botUsers.setName("Bot Count : " + botCount)
+      botUsers.setName("🤖Bot Count : " + botCount)
       .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
       .catch(console.error);
       }, 1000)
