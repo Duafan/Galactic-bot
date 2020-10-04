@@ -26,9 +26,9 @@ client.on('ready', () =>{
     const guild = client.guilds.get('335722331949367296');
 
     // Get our stats channels
-    const totalUsers = client.channels.get('589812086935388161');
-    const memberUsers = client.channels.get('589812154065223690');
-    const botUsers = client.channels.get('589812223388549140');
+    const totalUsers = client.channels.get('762351184907993148');
+    const memberUsers = client.channels.get('762351254621257778');
+    const botUsers = client.channels.get('762351282950242385');
 
     // Check every 10 seconds for changes
     setInterval(function() {
