@@ -11,17 +11,12 @@ module.exports.command = {
 exports.run =  async (client, message, args) => {
     if (!message.member.permissions.has("MANAGE_MESSAGES"))
       return message.channel.send(`No.`);
-    let User = message.mentions.users.first() || null;
+    let User = message.mentions.users.first();
 
-    if (User == null) {
-      return message.channel.send(`You did not mention a user!`);
-    } else {
-      let Reason = message.content.slice(client.prefix.length+1) || null;
-      if (Reason == null) {
-        return message.channel.send(
-          `You did not specify a reason for the report!`
-        );
-      }
+    if (!User) return message.channel.send(`You did not mention a user!`);
+    if (!args.slice(1).join(" "))
+      return message.channel.send(`You did not specify a reason!`);
+
       let Avatar = User.displayAvatarURL();
       let Channel = message.guild.channels.cache.find(
         (ch) => ch.name === "command-bot"
