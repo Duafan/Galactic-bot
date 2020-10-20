@@ -34,4 +34,4 @@ exports.run = async (client, message, args, ) => {
       )
       .setColor(`RANDOM`);
     message.channel.send(Embed);
-};
+}
