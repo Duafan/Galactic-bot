@@ -19,8 +19,8 @@ exports.run =  async (client, message, args) => {
       return message.channel.send(`You did not specify a reason!`);
 
       let Avatar = User.displayAvatarURL;
-      let Channel = message.guild.channels.cache.find(
-        (ch) => ch.name === "command-bot"
+      let Channel = message.guild.channels.find(
+        (Channel) => Channel.name === "command-bot"
       );
       if (!Channel)
         return message.channel.send(
