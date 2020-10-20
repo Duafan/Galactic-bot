@@ -25,8 +25,6 @@ client.giveawaysManager = new GiveawaysManager(client, {
     }
 });
 
-client.giveawaysManager = manager;
-
 client.on('ready', () =>{
     console.log('This bot is online!');
     setInterval(function() {
