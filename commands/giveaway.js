@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
     client.giveawaysManager.start(channel, {
         time: ms(giveawayDuration),
         prize: giveawayPrize,
-        winnerCount: giveawayWinners,
+        winnerCount: parseInt(args[1]),
         hostedBy: message.author.username,
 
         messages: {
