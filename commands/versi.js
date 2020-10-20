@@ -5,7 +5,7 @@ module.exports.command = {
     name: "versi",
     aliases: ["ver", "version"],
     description: "To show you bot's version",
-    category: "Util",
+    category: "Info",
     usage: ".versi"
 }
 

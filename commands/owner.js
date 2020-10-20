@@ -4,7 +4,7 @@ module.exports.command = {
    name: "owner",
    aliases: ["own"],
    description: "To show you who created this bot",
-   category: "Util",
+   category: "Info",
    usage: ".owner"
 }
 

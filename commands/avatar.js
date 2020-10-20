@@ -5,7 +5,7 @@ module.exports.command = {
     name: "avatar",
     aliases: ["ava", "av"],
     description: "Shows someone avatar",
-    category: "Util",
+    category: "Info",
     usage: ".avatar <@user>"
 }
 // This is the brackets in which the command goes in

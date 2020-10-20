@@ -1,8 +1,8 @@
 module.exports.command = {
     name: "emoji",
-    aliases: ["emojiinfo"],
+    aliases: ["emojiinfo", "infoemoji"],
     description: "View all emojis in the guild",
-    category: "Util",
+    category: "Info",
     usage: ".emoji"
 }
 
@@ -13,7 +13,7 @@ exports.run = async (client, message, args, ) => {
     let Animated = 0;
     let OverallEmojis = 0;
     function Emoji(id) {
-      return bot.emojis.cache.get(id).toString();
+      return client.emojis.cache.get(id).toString();
     }
     message.guild.emojis.cache.forEach((emoji) => {
       OverallEmojis++;

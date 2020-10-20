@@ -6,7 +6,7 @@ module.exports.command = {
     name: "serverinfo",
     aliases: ["si", "server"],
     description: "To show you this server information",
-    category: "Util",
+    category: "Info",
     usage: ".serverinfo"
 }
 

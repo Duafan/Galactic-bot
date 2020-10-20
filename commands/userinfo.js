@@ -7,7 +7,7 @@ module.exports.command = {
     name: "userinfo",
     aliases: ["ui"],
     description: "To show you someone's information",
-    category: "Util",
+    category: "Info",
     usage: ".userinfo <@user>"
 }
 

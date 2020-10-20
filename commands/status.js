@@ -4,7 +4,7 @@ module.exports.command = {
     name: "status",
     aliases: ["status"],
     description: "To show you the bot's status",
-    category: "Util",
+    category: "Info",
     usage: ".status"
 }
 

@@ -4,7 +4,7 @@ module.exports.command = {
   name: "botinfo",
   aliases: ["bi"],
   description: "Shows all bot info",
-  category: "Util",
+  category: "Info",
   usage: ".botinfo"
 }
 
