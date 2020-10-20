@@ -1,3 +1,5 @@
+const warns = require("../commands/warns");
+
 module.exports.command = {
     name: "warn",
     aliases: ["warned"],
