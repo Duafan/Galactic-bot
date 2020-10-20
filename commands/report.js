@@ -16,7 +16,7 @@ exports.run =  async (client, message, args) => {
     if (User == null) {
       return message.channel.send(`You did not mention a user!`);
     } else {
-      let Reason = message.content.slice(client.prefix.length+22) || null;
+      let Reason = message.content.slice(client.prefix.length+1) || null;
       if (Reason == null) {
         return message.channel.send(
           `You did not specify a reason for the report!`
