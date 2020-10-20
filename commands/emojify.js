@@ -1,6 +1,6 @@
 module.exports.command = {
     name: "emojify",
-    aliases: ["emo", "emoji"],
+    aliases: ["emo"],
     description: "To make your text become an emoji",
     category: "Util",
     usage: ".emojify <your text>"

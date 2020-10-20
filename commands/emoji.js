@@ -3,7 +3,7 @@ module.exports.command = {
     aliases: ["emojiinfo"],
     description: "View all emojis in the guild",
     category: "Util",
-    usage: ".emojify <your text>"
+    usage: ".emoji"
 }
 
 exports.run = async (client, message, args, ) => {
