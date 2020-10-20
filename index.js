@@ -10,8 +10,20 @@ const active = new Map();
 
 const { loadCommands } = require("./util/handler")
 loadCommands()
-
 let statuses = ['.help or .h', '.help <command>']
+
+const { GiveawaysManager } = require('discord-giveaways');
+
+client.giveawaysManager = new GiveawaysManager(client, {
+    storage: "./giveaways.json",
+    updateCountdownEvery: 5000,
+    default: {
+        botsCanWin: false,
+        exemptPermissions: ["MANAGE_MESSAGES", "ADMINISTRATOR"],
+        embedColor: "#FF0000",
+        reaction: "🎉"
+    }
+});
 
 client.on('ready', () =>{
     console.log('This bot is online!');
