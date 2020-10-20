@@ -27,15 +27,16 @@ module.exports.run = async (client, message, args) => {
 
     if (!giveawayPrize) return message.channel.send('Ok then, I\'ll give away nothing');
 
+    
     client.giveawaysManager.start(channel, {
         time: ms(giveawayDuration),
         prize: giveawayPrize,
         winnerCount: giveawayWinners,
-        hostedBy: client.message.author.username,
+        hostedBy: message.author.username,
 
         messages: {
-            giveaway: (client.config.everyoneMention ? "@everyone\n\n" : "") + "GIVEAWAY",
-            giveawayEned: (client.config.everyoneMention ? "@everyone\n\n" : "") + "GIVEAWAY ENDED",
+            giveaway: "@everyone\n\n" + "" + "GIVEAWAY",
+            giveawayEned: "@everyone\n\n" + "" + "GIVEAWAY ENDED",
             timeRemaining: "Time remaining: **{duration}**",
             inviteToParticipate: "React with 🎉 to enter",
             winMessage: "Congrats {winners}, you won **{prize}**",
