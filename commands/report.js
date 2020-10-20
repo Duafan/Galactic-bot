@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+
 module.exports.command = {
     name: "report",
     aliases: ["reported"],
@@ -50,4 +51,4 @@ exports.run =  async (client, message, args) => {
         );
       Channel.send(Embed);
     }
-  };
+  }
