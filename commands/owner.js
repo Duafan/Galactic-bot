@@ -19,8 +19,8 @@ exports.run = async (client, message, args) =>{
    .setTimestamp()
    message.channel.send(embed).then(message => {
       embed.setColor(0x43f033)
-      embed.setTitle("Owned by Galactic")
-      embed.setDescription("Created by Admin and Owner")
+      embed.setTitle("Bot ini hanya dimiliki oleh Server Galactic")
+      embed.setDescription("Dibuat oleh para petinggi Galactic")
       embed.setFooter(useruser, userurl)
       embed.setTimestamp()
       message.edit(embed)

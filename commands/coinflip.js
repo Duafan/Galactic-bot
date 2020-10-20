@@ -8,8 +8,8 @@ module.exports.command = {
     usage: ".coinflip"
 }
 var coin = [
-    ":moneybag: **CoinFlip:** you flipped heads :moneybag:",
-    ":moneybag: **CoinFlip:** you flipped tails :moneybag:",
+    ":coin: **CoinFlip:** Muncul Gambar :coin:",
+    ":coin: **CoinFlip:** Muncul Angka :coin:",
 ];
 const PREFIX = "."
 
