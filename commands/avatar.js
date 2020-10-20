@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
     if(message.mentions.users.first() === client.user) return message.channel.send("You shall not steal my avatar!!")
 
     if(args[0] == "help"){
-        message.reply("Usage: >avatar <user> || +avatar");
+        message.reply("Usage: .avatar @<user>");
         return;
     };
     let msg = await message.channel.send("Generating avatar...");
@@ -33,7 +33,7 @@ exports.run = async (client, message, args) => {
         },
         author: {
             icon_url: message.guild.iconURL,
-            name: "zexter-",
+            name: `Requested by ${message.author.username}#${message.author.discriminator}`,
           }
         }});
 
