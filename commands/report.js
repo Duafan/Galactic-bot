@@ -14,10 +14,11 @@ exports.run =  async (client, message, args) => {
     let User = message.mentions.users.first();
 
     if (!User) return message.channel.send(`You did not mention a user!`);
-    if (!args.slice(1).join(" "))
+    let Reason = args.slice(1).join(" ")
+    if (!Reason)
       return message.channel.send(`You did not specify a reason!`);
 
-      let Avatar = User.displayAvatarURL();
+      let Avatar = User.displayAvatarURL;
       let Channel = message.guild.channels.cache.find(
         (ch) => ch.name === "command-bot"
       );
