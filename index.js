@@ -12,13 +12,13 @@ const { loadCommands } = require("./util/handler")
 loadCommands()
 let statuses = ['.help or .h', '.help <command>']
 
-const { GiveawaysManager } = require('discord-giveaways');
+const {GiveawaysManager} = require('discord-giveaways');
 
 client.giveawaysManager = new GiveawaysManager(client, {
     storage: "./giveaways.json",
     updateCountdownEvery: 5000,
     default: {
-        botsCanWin: false,
+        botsCanWin: true,
         exemptPermissions: ["MANAGE_MESSAGES", "ADMINISTRATOR"],
         embedColor: "#FF0000",
         reaction: "🎉"

@@ -14,6 +14,7 @@
   "author": "zexter-",
   "license": "ISC",
   "dependencies": {
+    "discord-giveaways": "^4.1.8",
     "ascii-art": "^1.5.1",
     "discord.js": "^11.5.1",
     "ffmpeg": "0.0.4",

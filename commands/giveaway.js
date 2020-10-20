@@ -5,7 +5,7 @@ module.exports.command = {
     aliases: ["ga"],
     description: "To start a giveaway",
     category: "Giveaway",
-    usage: ".giveaway"
+    usage: ".giveaway #namachannel 'waktu' 'jumlahpemenang' 'judul'"
   }
   
 module.exports.run = async (client, message, args) => {
@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
         time: ms(giveawayDuration),
         prize: giveawayPrize,
         winnerCount: giveawayWinners,
-        hostedBy: client.config.hostedBy ? message.author : null,
+        hostedBy: client.message.author.username,
 
         messages: {
             giveaway: (client.config.everyoneMention ? "@everyone\n\n" : "") + "GIVEAWAY",
