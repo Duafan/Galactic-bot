@@ -16,9 +16,9 @@ const {GiveawaysManager} = require('discord-giveaways');
 
 client.giveawaysManager = new GiveawaysManager(client, {
     storage: "./giveaways.json",
-    updateCountdownEvery: 5000,
+    updateCountdownEvery: 1000,
     default: {
-        botsCanWin: true,
+        botsCanWin: false,
         exemptPermissions: ["MANAGE_MESSAGES", "ADMINISTRATOR"],
         embedColor: "#FF0000",
         reaction: "🎉"
