@@ -46,4 +46,3 @@ exports.run =  async (client, message, args) => {
         );
       Channel.send(Embed);
     }
-  }
