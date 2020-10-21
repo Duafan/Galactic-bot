@@ -35,11 +35,11 @@ module.exports.run = async (client, message, args) => {
         hostedBy: message.author.username,
 
         messages: {
-            giveaway: "@everyone\n\n" + "🎉🎉 GIVEAWAY 🎉🎉",
-            giveawayEned: "@everyone\n\n" + "GIVEAWAY BERAKHIR",
+            giveaway: "@everyone\n\n" + "🎉🎉 **GIVEAWAY** 🎉🎉",
+            giveawayEnded: "@everyone\n\n" + "GIVEAWAY BERAKHIR",
             timeRemaining: "Sisa waktu: **{duration}**",
             inviteToParticipate: "Tekan emoji 🎉 dibawah untuk ikut giveaway ini!",
-            winMessage: "SELAMAT {winners} !!! 🎉🎉🎉 \nKAMU MENANG **{prize}** !!! 🎁🎁🎁",
+            winMessage: "SELAMAT {winners} !!! 🎉 \nKAMU MENANG **{prize}** !!! 🎁",
             embedFooter: "Giveaway time!",
             noWinner: "Tidak dapat menentukan pemenangnya.",
             hostedBy: "Diadakan oleh {user}",
