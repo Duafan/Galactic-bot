@@ -16,12 +16,12 @@ const { GiveawaysManager } = require('discord-giveaways');
 
 client.giveawaysManager = new GiveawaysManager(client, {
     storage: "./giveaways.json",
-    updateCountdownEvery: 5000,
+    updateCountdownEvery: 1000,
     default: {
         botsCanWin: false,
         exemptPermissions: [],
         embedColor: "RANDOM",
-        reaction: ":mikel:"
+        reaction: "🎉"
     }
 });
 

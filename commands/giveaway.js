@@ -36,9 +36,9 @@ module.exports.run = async (client, message, args) => {
 
         messages: {
             giveaway: "@everyone\n\n" + "🎉🎉 GIVEAWAY 🎉🎉",
-            giveawayEned: "@everyone\n\n" + "GIVEAWAY ENDED",
+            giveawayEned: "@everyone\n\n" + "GIVEAWAY BERAKHIR",
             timeRemaining: "Sisa waktu: **{duration}**",
-            inviteToParticipate: "React with :mikel: to enter",
+            inviteToParticipate: "Tekan emoji 🎉 dibawah untuk ikut giveaway ini!",
             winMessage: "SELAMAT {winners} !!! 🎉🎉🎉 \n KAMU MENANG **{prize}** !!! 🎁🎁🎁",
             embedFooter: "Giveaway time!",
             noWinner: "Tidak dapat menentukan pemenangnya.",
