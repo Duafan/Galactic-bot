@@ -20,8 +20,8 @@ client.giveawaysManager = new GiveawaysManager(client, {
     default: {
         botsCanWin: false,
         exemptPermissions: [],
-        embedColor: "#FF0000",
-        reaction: "🎉"
+        embedColor: "RANDOM",
+        reaction: ":mikel:"
     }
 });
 
