@@ -80,18 +80,22 @@ let stats = {
 }
 
 client.on('guildMemberAdd', (member) =>{
-    /*if(member.guild.id !== stats.serverID) return;
+    if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
-    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);*/
+    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 
-    let channelID = '590094600333557774';
-    if(member.guild.id != '583531571836092436') return;
+    let channelID = '762351376612589569';
+    if(member.guild.id != '335722331949367296') return;
     let embed = new Discord.MessageEmbed()
-        .setTittle('Member Join!')
-        .setDescription(`\`${member.user.tag}\` has joined this server!`)
-        .setColor("ORANGE")
+        .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
+        .setThumbnail(member.user.avatarURL())
+        .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝘽𝘼𝙍𝙐!`)
+        .addField(`Selamat datang di Galactic Discord Server, **\`${member.user.username}#${member.user.discriminator}\`** !`,' Selamat bersenang-senang! :slight_smile:',  true)
+        .addField(`ID`, `${member.user.id}`, true)
+        .addField(`Anda member ke`, `**\`${member.guild.memberCount}\`**`, true)
         .setTimestamp()
+        .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
         client.channels.cache.get(channelID).send(embed)
 
     /*const welcomeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
@@ -109,18 +113,22 @@ client.on('guildMemberAdd', (member) =>{
 });
 
 client.on('guildMemberRemove', (member) =>{
-    /*if(member.guild.id !== stats.serverID) return;
+    if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
-    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);*/
+    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 
-    let channelID = '590094623578390537';
-    if(member.guild.id != '583531571836092436') return;
+    let channelID = '762351448751079454';
+    if(member.guild.id != '335722331949367296') return;
     let embed = new Discord.MessageEmbed()
-        .setTittle('Member Left!')
-        .setDescription(`\`${member.user.tag}\` has left this server!`)
-        .setColor("ORANGE")
+        .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
+        .setThumbnail(member.user.avatarURL())
+        .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝙆𝙀𝙇𝙐𝘼𝙍!`)
+        .addField(`Sampai jumpa **\`${member.user.username}#${member.user.discriminator}\`** !`,  'Terima kasih. :upside_down: ', true)
+        .addField(`ID`, `${member.user.id}`, true)
+        .addField('Tanggal Join', member.joinedAt, true)
         .setTimestamp()
+        .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
         client.channels.cache.get(channelID).send(embed)
 
     /*const goodbyeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
