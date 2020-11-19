@@ -27,7 +27,7 @@ exports.run = async (client, message, args) => {
         .setImage(avatar)
         .setColor(0x43f033)
         .setTimestamp()
-        .setFooter(`© Galactic Bot`, client.user.displayAvatarURL)
+        .setFooter(`© Galactic Bot`, client.user.displayAvatarURL())
         message.channel.send(embed);
 
         /*message.channel.send({embed: {
