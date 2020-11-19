@@ -18,14 +18,9 @@ exports.run = async (client, message, args) => {
     // Forming the embed
     const embed = new Discord.MessageEmbed() // Remember to use .MessageEmbed() if you use the master version
         .setColor(0x43f033)
-        .setDescription(`Loading...`)
+        .setDescription(`:ping_pong: Pong! **\`${client.pings[0]}ms\`**`)
+        .setFooter(useruser, userurl)
         .setTimestamp()
-    message.channel.send(embed).then(message => {
-        embed.setColor(0x43f033)
-        embed.setDescription(`:ping_pong: Pong! **\`${client.pings[0]}ms\`**`)
-        embed.setFooter(useruser, userurl)
-        embed.setTimestamp()
-        message.edit(embed)
-    })
+    message.channel.send(embed);
 
 } 
