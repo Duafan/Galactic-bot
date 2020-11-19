@@ -34,7 +34,7 @@ exports.run = async (client, message, args) => {
         .addField('Joined server', `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
         .addField('Status', `${user.presence.status}`, true)
         .addField('Game', `${user.presence.game ? user.presence.game.name : 'None'}`, true)
-        .addField('Roles', member.roles.map(roles => `${roles.name}`).join(', '), true)
+        .addField('Roles', member.roles.cache.map(roles => `${roles.name}`).join(', '), true)
         .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
 
     // Send the Embed
