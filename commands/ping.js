@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
     const userurl = message.author.avavtarURL;
 
     // Forming the embed
-    let embed = new Discord.RichEmbed() // Remember to use .MessageEmbed() if you use the master version
+    const embed = new Discord.MessageEmbed() // Remember to use .MessageEmbed() if you use the master version
         .setColor(0x43f033)
         .setDescription(`Loading...`)
         .setTimestamp()
