@@ -85,7 +85,7 @@ client.on('guildMemberAdd', member =>{
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 
-    const channel = member.guild.channels.find(channel => channel.name === "welcome🎉");
+    const channel = member.guild.channels.cache.find(channel => channel.name === "welcome🎉");
     if(!channel) return;
     channel.send({embed: new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
                     .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
@@ -106,7 +106,7 @@ client.on('guildMemberRemove', member =>{
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 
-    const channel = member.guild.channels.find(channel => channel.name === "goodbye👋");
+    const channel = member.guild.channels.cache.find(channel => channel.name === "goodbye👋");
     if(!channel) return;
     channel.send({embed: new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
                     .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
