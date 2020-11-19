@@ -18,7 +18,7 @@ exports.run = async (client, message, args, tools) => {
 
     if (!args[0]) return message.channel.send('Proper Usage: <prefix>poll question');
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setColor(0x43f033)
         .setFooter('React to vote.')
         .setDescription(args.join(' '))

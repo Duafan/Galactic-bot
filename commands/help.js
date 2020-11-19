@@ -10,7 +10,7 @@ module.exports.command = {
 
 exports.run = async (client, message, args) => {
     let commandSize = 0
-    let embed = new Discord.RichEmbed().setColor("RANDOM")
+    let embed = new Discord.MessageEmbed().setColor("RANDOM")
 
     if (!args[0]) {
         let categories =

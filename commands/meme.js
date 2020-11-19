@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
     
     if(!{body}) return message.channel.send("Something went wrong, please try again!")
 
-        let mEmbed = new Discord.RichEmbed()
+        let mEmbed = new Discord.MessageEmbed()
         .setColor(0x43f033)
         .setAuthor(`MEMES!`, message.guild.iconURL)
         .setImage(body.data)

@@ -21,7 +21,7 @@ exports.run = async (client, message, args) => {
     let icon = message.author.displayAvatarURL;
 
     if (slots[result1] === slots[result2] && slots[result3]) {
-        let wEmbed = new Discord.RichEmbed() // Remember to use MessageEmbed if you use master
+        let wEmbed = new Discord.MessageEmbed() // Remember to use MessageEmbed if you use master
             .setFooter('You won!', icon)
             .setTitle(':slot_machine: Slots :slot_machine:')
             .addField('Result:', slots[result1] + slots[result2] + slots[result3], true)
@@ -30,7 +30,7 @@ exports.run = async (client, message, args) => {
 
     } else {
 
-        let lEmbed = new Discord.RichEmbed()
+        let lEmbed = new Discord.MessageEmbed()
             .setFooter('You lost!', icon)
             .setTitle(':slot_machine: Slots :slot_machine:')
             .addField('Result:', slots[result1] + slots[result2] + slots[result3], true)

@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
     
     if(!{body}) return message.channel.send("Something went wrong, please try again!")
 
-        let cEmbed = new Discord.RichEmbed()
+        let cEmbed = new Discord.MessageEmbed()
         .setColor(0x43f033)
         .setAuthor(`CATS!`, message.guild.iconURL)
         .setImage(body.file)

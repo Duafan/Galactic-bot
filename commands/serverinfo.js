@@ -14,7 +14,7 @@ exports.run = async (client, message, args) => {
 
     // Variables
     let icon = message.guild.iconURL;
-    let embed = new Discord.RichEmbed() // or Discord.MessageEmbed
+    let embed = new Discord.MessageEmbed() // or Discord.MessageEmbed
         .setDescription('Server Info')
         .setColor('0x43f033')
         .setThumbnail(icon)

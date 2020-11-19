@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
   try {
     let collected = await message.channel.awaitMessages(answer => item.a.includes(answer.content.toLowerCase()), options);
     let winnerMessage = collected.first();
-    return message.channel.send({embed: new Discord.RichEmbed()
+    return message.channel.send({embed: new Discord.MessageEmbed()
                                   .setAuthor(`Winner: ${winnerMessage.author.tag}`, winnerMessage.author.displayAvatarURL)
                                   .setTitle(`Correct Answer: \`${winnerMessage.content}\``)
                                   .setFooter(`Question: ${item.q}`)
@@ -34,7 +34,7 @@ exports.run = async (client, message, args) => {
                                 })
 
   } catch (_) {
-    return message.channel.send({embed: new Discord.RichEmbed()
+    return message.channel.send({embed: new Discord.MessageEmbed()
                                   .setAuthor('No one got the answer in time!')
                                   .setTitle(`Correct Answer(s): \`${item.a}\``)
                                   .setFooter(`Question: ${item.q}`)

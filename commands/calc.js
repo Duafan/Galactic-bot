@@ -19,7 +19,7 @@ exports.run = async (client, message, args, tools) => {
         return message.channel.send('Sorry, please input a valid calculation.');
     }
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setColor(0x43f033)
         .setTitle('Math Calculation')
         .addField('Input', `\`\`\`js\n${args.join('')}\`\`\``)

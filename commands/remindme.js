@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
 
     let reminderTime = args[0]; 
     if (!reminderTime) {
-        let embed = new Discord.RichEmbed() 
+        let embed = new Discord.MessageEmbed() 
             .setTitle('Proper Usage') 
             .setDescription(`\`<prefix>remindme 15min any text or code\``)
 
@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
 
     let reminder = args.slice(1).join(" "); 
 
-    let remindEmbed = new Discord.RichEmbed() 
+    let remindEmbed = new Discord.MessageEmbed() 
         .setColor('0x43f033')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL)
         .addField('Reminder', `\`\`\`${reminder}\`\`\``) 
@@ -34,7 +34,7 @@ exports.run = async (client, message, args) => {
     message.channel.send(remindEmbed); 
 
     setTimeout(function() {
-        let remindEmbed = new Discord.RichEmbed()
+        let remindEmbed = new Discord.MessageEmbed()
             .setColor('#00e9ff')
             .setAuthor(`${message.author.username}`, message.author.displayAvatarURL)
             .addField('Reminder', `\`\`\`${reminder}\`\`\``)

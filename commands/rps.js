@@ -19,19 +19,19 @@ exports.run = async (client, message, args) => {
     let scissors2 = ['Batu! Yay aku menang!!', 'Kertas! Yahh kamu menang :(']
     let scissors1 = Math.floor(Math.random() * scissors2.length);
 
-let rock = new Discord.RichEmbed()
+let rock = new Discord.MessageEmbed()
     .setAuthor('Batu, Gunting, Kertas')
     .setColor(0x43f033)
     .addField('Kamu pilih', `${args[0]}`)
     .addField('Aku pilih', rock2[rock1])
 
-let paper = new Discord.RichEmbed()
+let paper = new Discord.MessageEmbed()
     .setAuthor('Batu, Gunting, Kertas')
     .setColor(0x43f033)
     .addField('Kamu pilih', `${args[0]}`)
     .addField('Aku pilih', paper2[paper1])
 
-let scissors = new Discord.RichEmbed()
+let scissors = new Discord.MessageEmbed()
     .setAuthor('Batu, Gunting, Kertas')
     .setColor(0x43f033)
     .addField('Kamu pilih', `${args[0]}`)

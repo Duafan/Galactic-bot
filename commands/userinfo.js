@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
      const member = message.guild.member(user);
 
      // Forming the Embed
-     const embed = new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
+     const embed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
         .setColor('0x43f033') // I just put random in here, but you can chnage it to anything else.
         .setThumbnail(user.avatarURL)
         .setTitle(`${user.username}#${user.discriminator}`)
