@@ -80,7 +80,7 @@ let stats = {
 }
 
 client.on('guildMemberAdd', member =>{
-    
+    if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
@@ -89,19 +89,19 @@ client.on('guildMemberAdd', member =>{
     if(!channel) return;
     channel.send({embed: new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
                     .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
-                    .setThumbnail(member.user.avatarURL)
+                    .setThumbnail(member.user.avatarURL())
                     .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝘽𝘼𝙍𝙐!`)
                     .addField(`Selamat datang di Galactic Discord Server, **\`${member.user.username}#${member.user.discriminator}\`** !`,' Selamat bersenang-senang! :slight_smile:',  true)
                     .addField(`ID`, `${member.user.id}`, true)
                     .addField(`Anda member ke`, `**\`${member.guild.memberCount}\`**`, true)
                     .setTimestamp()
-                    .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
+                    .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
                 });
         
 });
 
 client.on('guildMemberRemove', member =>{
-    
+    if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
@@ -110,13 +110,13 @@ client.on('guildMemberRemove', member =>{
     if(!channel) return;
     channel.send({embed: new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
                     .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
-                    .setThumbnail(member.user.avatarURL)
+                    .setThumbnail(member.user.avatarURL())
                     .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝙆𝙀𝙇𝙐𝘼𝙍!`)
                     .addField(`Sampai jumpa **\`${member.user.username}#${member.user.discriminator}\`** !`,  'Terima kasih. :upside_down: ', true)
                     .addField(`ID`, `${member.user.id}`, true)
                     .addField('Tanggal Join', member.joinedAt, true)
                     .setTimestamp()
-                    .setFooter(`Galactic Bot`, client.user.displayAvatarURL)
+                    .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
                 });
 });
 
