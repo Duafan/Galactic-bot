@@ -19,12 +19,20 @@ exports.run = async (client, message, args) => {
         return;
     };
     let msg = await message.channel.send("Generating avatar...");
-    let target = message.mentions.users.first() || message.author;
+    let avatar = member.displayAvatarURL({size: 1024})
+    
+      const embed = new Discord.MessageEmbed()
+        .setTitle(`Requested by ${message.author.username}#${message.author.discriminator}`, message.guild.iconURL)
+        .setImage(avatar)
+        .setColor(0x43f033)
+        .setTimestamp()
+        .setFooter(`© Galactic Bot`, client.user.displayAvatarURL)
+        message.channel.send(embed);
 
-        message.channel.send({embed: {
+        /*message.channel.send({embed: {
         color: 0x43f033,
         image: {
-            url: (target.displayAvatarURL)
+            url: (avatar)
           },
         timestamp: new Date(),
         footer: {
@@ -35,7 +43,7 @@ exports.run = async (client, message, args) => {
             icon_url: message.guild.iconURL,
             name: `Requested by ${message.author.username}#${message.author.discriminator}`,
           }
-        }});
+        }}); */
 
         msg.delete();
 }
