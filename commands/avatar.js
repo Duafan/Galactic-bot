@@ -18,6 +18,8 @@ exports.run = async (client, message, args) => {
         message.reply("Usage: .avatar @<user>");
         return;
     };
+    
+    let member = message.mentions.users.first() || message.author
     let avatar = member.displayAvatarURL({size: 1024})
     
       const embed = new Discord.MessageEmbed()
