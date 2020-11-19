@@ -87,7 +87,9 @@ client.on('guildMemberAdd', member =>{
 
     const channel = member.guild.channels.cache.find(channel => channel.name === "welcome🎉");
     if(!channel) return;
-    const welcomeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
+    channel.send(`Welcome! ${member}`)
+
+    /*const welcomeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
         .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
         .setThumbnail(member.user.avatarURL())
         .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝘽𝘼𝙍𝙐!`)
@@ -96,7 +98,7 @@ client.on('guildMemberAdd', member =>{
         .addField(`Anda member ke`, `**\`${member.guild.memberCount}\`**`, true)
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
-    channel.send(welcomeEmbed);
+    channel.send(welcomeEmbed);*/
 
         
 });
@@ -109,7 +111,9 @@ client.on('guildMemberRemove', member =>{
 
     const channel = member.guild.channels.cache.find(channel => channel.name === "goodbye👋");
     if(!channel) return;
-    const goodbyeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
+    channel.send(`Goodbye! ${member}`)
+
+    /*const goodbyeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
         .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
         .setThumbnail(member.user.avatarURL())
         .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝙆𝙀𝙇𝙐𝘼𝙍!`)
@@ -118,7 +122,7 @@ client.on('guildMemberRemove', member =>{
         .addField('Tanggal Join', member.joinedAt, true)
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
-    channel.send(goodbyeEmbed);
+    channel.send(goodbyeEmbed);*/
 
 });
 
