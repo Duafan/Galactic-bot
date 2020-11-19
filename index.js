@@ -87,7 +87,7 @@ client.on('guildMemberAdd', member =>{
 
     const channel = member.guild.channels.find(channel => channel.name === "welcome🎉");
     if(!channel) return;
-    channel.send({embed: new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
+    channel.send({embed: new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
                     .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
                     .setThumbnail(member.user.avatarURL)
                     .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝘽𝘼𝙍𝙐!`)
@@ -108,7 +108,7 @@ client.on('guildMemberRemove', member =>{
 
     const channel = member.guild.channels.find(channel => channel.name === "goodbye👋");
     if(!channel) return;
-    channel.send({embed: new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
+    channel.send({embed: new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
                     .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
                     .setThumbnail(member.user.avatarURL)
                     .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝙆𝙀𝙇𝙐𝘼𝙍!`)
