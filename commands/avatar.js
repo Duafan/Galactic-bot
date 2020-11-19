@@ -18,11 +18,10 @@ exports.run = async (client, message, args) => {
         message.reply("Usage: .avatar @<user>");
         return;
     };
-    let msg = await message.channel.send("Generating avatar...");
     let avatar = member.displayAvatarURL({size: 1024})
     
       const embed = new Discord.MessageEmbed()
-        .setTitle(`Requested by ${message.author.username}#${message.author.discriminator}`, message.guild.iconURL)
+        .setTitle(`Requested by ${message.author.username}#${message.author.discriminator}`)
         .setImage(avatar)
         .setColor(0x43f033)
         .setTimestamp()
@@ -45,5 +44,4 @@ exports.run = async (client, message, args) => {
           }
         }}); */
 
-        msg.delete();
 }
