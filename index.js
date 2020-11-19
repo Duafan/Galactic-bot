@@ -34,7 +34,7 @@ client.on('ready', () =>{
     }, 3000)
 
 
-    // Get our server
+    /*// Get our server
     const guild = client.guilds.get('335722331949367296');
 
     // Get our stats channels
@@ -68,15 +68,25 @@ client.on('ready', () =>{
       botUsers.setName("🤖Bot Count : " + botCount)
       .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
       .catch(console.error);
-      }, 10000)
+      }, 10000) */
 
 });
 
+let stats = {
+    serverID: '335722331949367296',
+    total: "762351184907993148",
+    member: "762351254621257778",
+    bots: "762351282950242385"
+}
+
 client.on('guildMemberAdd', member =>{
+    if(member.guild.id !== stats.serverID) return;
+    client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
+    client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
+    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 
     const channel = member.guild.channels.find(channel => channel.name === "welcome🎉");
     if(!channel) return;
-
     channel.send({embed: new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
                     .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
                     .setThumbnail(member.user.avatarURL)
@@ -91,10 +101,13 @@ client.on('guildMemberAdd', member =>{
 });
 
 client.on('guildMemberRemove', member =>{
-   
+    if(member.guild.id !== stats.serverID) return;
+    client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
+    client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
+    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
+
     const channel = member.guild.channels.find(channel => channel.name === "goodbye👋");
     if(!channel) return;
-
     channel.send({embed: new Discord.RichEmbed() // Use Discord.MessageEmbed if you use the master version
                     .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
                     .setThumbnail(member.user.avatarURL)
