@@ -48,8 +48,8 @@ client.on('ready', () =>{
 
       //Get actual counts
       var userCount = guild.memberCount;
-      var memberCount = member.guild.members.filter(m => !m.user.bot).size;
-      var botCount = member.guild.members.filter(m => m.user.bot).size;
+      var memberCount = guild.members.filter(m => !m.user.bot).size;
+      var botCount = guild.members.filter(m => m.user.bot).size;
         
       // Log counts for debugging
       console.log("👫🤖Total Users : " + userCount);
