@@ -38,18 +38,18 @@ client.on('ready', () =>{
     const guild = client.guilds.get('335722331949367296');
 
     // Get our stats channels
-    const totalUsers = client.channels.get('762351184907993148');
-    const memberUsers = client.channels.get('762351254621257778');
-    const botUsers = client.channels.get('762351282950242385');
+    const totalUsers = client.channels.cache.get('762351184907993148');
+    const memberUsers = client.channels.cache.get('762351254621257778');
+    const botUsers = client.channels.cache.get('762351282950242385');
 
     // Check every 10 seconds for changes
     setInterval(function() {
       console.log('Getting stats update..')
 
       //Get actual counts
-      var userCount = guild.memberCount;
-      var memberCount = guild.members.filter(m => !m.user.bot).size;
-      var botCount = guild.members.filter(m => m.user.bot).size;
+      var userCount = member.guild.memberCount;
+      var memberCount = member.guild.members.filter(m => !m.user.bot).size;
+      var botCount = member.guild.members.filter(m => m.user.bot).size;
         
       // Log counts for debugging
       console.log("👫🤖Total Users : " + userCount);
