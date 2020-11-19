@@ -18,19 +18,19 @@ exports.run = async (client, message, args) => {
         message.reply("Usage: .avatar @<user>");
         return;
     };
-
+    
     let member = message.mentions.users.first() || message.author
     let avatar = member.displayAvatarURL
     
-     /* const embed = new Discord.MessageEmbed()
+      const embed = new Discord.MessageEmbed()
         .setTitle(`Requested by ${message.author.username}#${message.author.discriminator}`)
         .setImage(avatar)
         .setColor(0x43f033)
         .setTimestamp()
         .setFooter(`© Galactic Bot`, client.user.displayAvatarURL)
-        message.channel.send(embed); */
+        message.channel.send(embed);
 
-        message.channel.send({embed: {
+        /*message.channel.send({embed: {
         color: 0x43f033,
         image: {
             url: (avatar)
@@ -44,6 +44,6 @@ exports.run = async (client, message, args) => {
             icon_url: message.guild.iconURL,
             name: `Requested by ${message.author.username}#${message.author.discriminator}`,
           }
-        }});
+        }}); */
 
 }
