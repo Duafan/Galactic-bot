@@ -80,10 +80,10 @@ let stats = {
 }
 
 client.on('guildMemberAdd', member =>{
-    if(member.guild.id !== stats.serverID) return;
+    /*if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
-    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
+    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);*/
 
     const channel = member.guild.channels.cache.find(channel => channel.name === "welcome🎉");
     if(!channel) return;
@@ -104,10 +104,10 @@ client.on('guildMemberAdd', member =>{
 });
 
 client.on('guildMemberRemove', member =>{
-    if(member.guild.id !== stats.serverID) return;
+    /*if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
-    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
+    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);*/
 
     const channel = member.guild.channels.cache.find(channel => channel.name === "goodbye👋");
     if(!channel) return;
