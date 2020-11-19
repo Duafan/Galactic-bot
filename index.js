@@ -79,15 +79,20 @@ let stats = {
     bots: "762351282950242385"
 }
 
-client.on('guildMemberAdd', member =>{
+client.on('guildMemberAdd', (member) =>{
     /*if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);*/
 
-    const channel = member.guild.channels.cache.find(channel => channel.name === "welcome");
-    if(!channel) return;
-    channel.send(`Welcome! ${member}`)
+    let channelID = '590094600333557774';
+    if(member.guild.id != '583531571836092436') return;
+    let embed = new Discord.MessageEmbed()
+        .setTittle('Member Join!')
+        .setDescription(`\`${member.user.tag}\` has joined this server!`)
+        .setColor("ORANGE")
+        .setTimestamp()
+        client.channels.cache.get(channelID).send(embed)
 
     /*const welcomeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
         .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
@@ -103,15 +108,20 @@ client.on('guildMemberAdd', member =>{
         
 });
 
-client.on('guildMemberRemove', member =>{
+client.on('guildMemberRemove', (member) =>{
     /*if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);*/
 
-    const channel = member.guild.channels.cache.find(channel => channel.name === "goodbye");
-    if(!channel) return;
-    channel.send(`Goodbye! ${member}`)
+    let channelID = '590094623578390537';
+    if(member.guild.id != '583531571836092436') return;
+    let embed = new Discord.MessageEmbed()
+        .setTittle('Member Left!')
+        .setDescription(`\`${member.user.tag}\` has left this server!`)
+        .setColor("ORANGE")
+        .setTimestamp()
+        client.channels.cache.get(channelID).send(embed)
 
     /*const goodbyeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
         .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
