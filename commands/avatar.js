@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
     };
     
     let member = message.mentions.users.first() || message.author
-    let avatar = member.displayAvatarURL
+    let avatar = member.displayAvatarURL()
     
       const embed = new Discord.MessageEmbed()
         .setTitle(`Requested by ${message.author.username}#${message.author.discriminator}`)
