@@ -47,7 +47,7 @@ client.on('ready', () =>{
       console.log('Getting stats update..')
 
       //Get actual counts
-      var userCount = member.guild.memberCount;
+      var userCount = guild.memberCount;
       var memberCount = member.guild.members.filter(m => !m.user.bot).size;
       var botCount = member.guild.members.filter(m => m.user.bot).size;
         
