@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
      // Forming the Embed
      const embed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
         .setColor('0x43f033') // I just put random in here, but you can chnage it to anything else.
-        .setThumbnail(user.avatarURL)
+        .setThumbnail(user.avatarURL())
         .setTitle(`${user.username}#${user.discriminator}`)
         .addField('ID', `${user.id}`, true)
         .addField('Nickname', `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
