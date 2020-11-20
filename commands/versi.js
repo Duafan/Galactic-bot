@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-var version = '1.2.5';
+var version = '1.3.0';
 
 module.exports.command = {
     name: "versi",
