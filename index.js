@@ -85,9 +85,9 @@ client.on('guildMemberAdd', member => {
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 
-    const channelID = '590094600333557774';
-    if(member.guild.id != '583531571836092436') return;
-    const embed = new Discord.MessageEmbed()
+    const channel = member.guild.channels.cache.find(ch => ch.name === 'welcome🎉');
+	if (!channel) return;
+    const welcomeEmbed = new Discord.MessageEmbed()
         .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
         .setThumbnail(member.user.avatarURL())
         .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝘽𝘼𝙍𝙐!`)
@@ -96,7 +96,7 @@ client.on('guildMemberAdd', member => {
         .addField(`Anda member ke`, `**\`${member.guild.memberCount}\`**`, true)
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
-        client.channels.cache.get(channelID).send(embed)
+        channel.send(welcomeEmbed);
 
     /*const welcomeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
         .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
@@ -118,9 +118,9 @@ client.on('guildMemberRemove', member =>{
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 
-    const channelID = '590094623578390537';
-    if(member.guild.id != '583531571836092436') return;
-    const embed = new Discord.MessageEmbed()
+    const channel = member.guild.channels.cache.find(ch => ch.name === 'goodbye👋');
+	if (!channel) return;
+    const goodbyeEmbed = new Discord.MessageEmbed()
         .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
         .setThumbnail(member.user.avatarURL())
         .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝙆𝙀𝙇𝙐𝘼𝙍!`)
@@ -129,7 +129,7 @@ client.on('guildMemberRemove', member =>{
         .addField('Tanggal Join', member.joinedAt, true)
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
-        client.channels.cache.get(channelID).send(embed)
+        channel.send(goodbyeEmbed);
 
     /*const goodbyeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
         .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
