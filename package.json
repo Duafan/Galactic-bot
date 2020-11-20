@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "ascii-art": "^1.5.1",
+    "canvas": "^2.6.1",
     "discord-giveaways": "^4.2.1",
     "discord.js": "^12.4.1",
     "ffmpeg": "0.0.4",
