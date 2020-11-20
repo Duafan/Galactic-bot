@@ -73,21 +73,21 @@ client.on('ready', () =>{
 });
 
 let stats = {
-    serverID: '335722331949367296',
-    total: "762351184907993148",
-    member: "762351254621257778",
-    bots: "762351282950242385"
+    serverID: '583531571836092436',
+    total: "590112421771739137",
+    member: "590112458514104349",
+    bots: "590112497525194752"
 }
 
-client.on('guildMemberAdd', (member) =>{
+client.on('guildMemberAdd', member => {
     if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 
-    let channelID = '762351376612589569';
-    if(member.guild.id != '335722331949367296') return;
-    let embed = new Discord.MessageEmbed()
+    const channelID = '590094600333557774';
+    if(member.guild.id != '583531571836092436') return;
+    const embed = new Discord.MessageEmbed()
         .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
         .setThumbnail(member.user.avatarURL())
         .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝘽𝘼𝙍𝙐!`)
@@ -112,15 +112,15 @@ client.on('guildMemberAdd', (member) =>{
         
 });
 
-client.on('guildMemberRemove', (member) =>{
+client.on('guildMemberRemove', member =>{
     if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
     client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 
-    let channelID = '762351448751079454';
-    if(member.guild.id != '335722331949367296') return;
-    let embed = new Discord.MessageEmbed()
+    const channelID = '590094623578390537';
+    if(member.guild.id != '583531571836092436') return;
+    const embed = new Discord.MessageEmbed()
         .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
         .setThumbnail(member.user.avatarURL())
         .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝙆𝙀𝙇𝙐𝘼𝙍!`)
