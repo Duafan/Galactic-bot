@@ -35,12 +35,12 @@ client.on('ready', () =>{
 
 
     /*// Get our server
-    const guild = client.guilds.get('335722331949367296');
+    const guild = client.guilds.cache.get('335722331949367296');
 
     // Get our stats channels
-    const totalUsers = client.channels.get('762351184907993148');
-    const memberUsers = client.channels.get('762351254621257778');
-    const botUsers = client.channels.get('762351282950242385');
+    const totalUsers = client.channels.cache.get('762351184907993148');
+    const memberUsers = client.channels.cache.get('762351254621257778');
+    const botUsers = client.channels.cache.get('762351282950242385');
 
     // Check every 10 seconds for changes
     setInterval(function() {
@@ -48,8 +48,8 @@ client.on('ready', () =>{
 
       //Get actual counts
       var userCount = guild.memberCount;
-      var memberCount = guild.members.filter(m => !m.user.bot).size;
-      var botCount = guild.members.filter(m => m.user.bot).size;
+      var memberCount = guild.members.cache.filter(m => !m.user.bot).size;
+      var botCount = guild.members.cache.filter(m => m.user.bot).size;
         
       // Log counts for debugging
       console.log("👫🤖Total Users : " + userCount);
@@ -72,7 +72,7 @@ client.on('ready', () =>{
 
 });
 
-let stats = {
+const stats = {
     serverID: '583531571836092436',
     total: "590112421771739137",
     member: "590112458514104349",
@@ -97,18 +97,6 @@ client.on('guildMemberAdd', member => {
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
         channel.send(welcomeEmbed);
-
-    /*const welcomeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
-        .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
-        .setThumbnail(member.user.avatarURL())
-        .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝘽𝘼𝙍𝙐!`)
-        .addField(`Selamat datang di Galactic Discord Server, **\`${member.user.username}#${member.user.discriminator}\`** !`,' Selamat bersenang-senang! :slight_smile:',  true)
-        .addField(`ID`, `${member.user.id}`, true)
-        .addField(`Anda member ke`, `**\`${member.guild.memberCount}\`**`, true)
-        .setTimestamp()
-        .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
-    channel.send(welcomeEmbed);*/
-
         
 });
 
@@ -130,17 +118,6 @@ client.on('guildMemberRemove', member =>{
         .setTimestamp()
         .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
         channel.send(goodbyeEmbed);
-
-    /*const goodbyeEmbed = new Discord.MessageEmbed() // Use Discord.MessageEmbed if you use the master version
-        .setColor('#4dfff6') // I just put random in here, but you can chnage it to anything else.
-        .setThumbnail(member.user.avatarURL())
-        .setTitle(`𝙈𝙀𝙈𝘽𝙀𝙍 𝙆𝙀𝙇𝙐𝘼𝙍!`)
-        .addField(`Sampai jumpa **\`${member.user.username}#${member.user.discriminator}\`** !`,  'Terima kasih. :upside_down: ', true)
-        .addField(`ID`, `${member.user.id}`, true)
-        .addField('Tanggal Join', member.joinedAt, true)
-        .setTimestamp()
-        .setFooter(`Galactic Bot`, client.user.displayAvatarURL())
-    channel.send(goodbyeEmbed);*/
 
 });
 

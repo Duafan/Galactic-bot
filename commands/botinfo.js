@@ -16,8 +16,8 @@ module.exports.run = async (client, message, args) => {
     .setThumbnail(bicon)
     .addField("Bot Name", client.user.username)
     .addField("Created On", client.user.createdAt)
-    .addField("Guilds in", client.guilds.size)
-    .addField("Helping", client.users.size)
+    .addField("Guilds in", client.guilds.cache.size)
+    .addField("Helping", client.users.cache.size)
 
     message.channel.send(botembed);
 }
