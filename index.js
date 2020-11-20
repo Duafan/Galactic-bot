@@ -48,12 +48,12 @@ client.on('ready', () =>{
 
       //Get actual counts
       var userCount = guild.memberCount;
-      var memberCount = guild.members.cache.filter(m => !m.user.bot).size;
+      var membersCount = guild.members.cache.filter(m => !m.user.bot).size;
       var botCount = guild.members.cache.filter(m => m.user.bot).size;
         
       // Log counts for debugging
       console.log("👫🤖Total Users : " + userCount);
-      console.log("👫Member Count : " + memberCount);
+      console.log("👫Member Count : " + membersCount);
       console.log("🤖Bot Count : " + botCount);
 
       // Set channel names
@@ -61,7 +61,7 @@ client.on('ready', () =>{
       .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
       .catch(console.error);
 
-      memberUsers.setName("👫Member Count : " + memberCount)
+      memberUsers.setName("👫Member Count : " + membersCount)
       .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
       .catch(console.error);
 
@@ -72,12 +72,12 @@ client.on('ready', () =>{
 
 });
 
-const stats = {
+/*const stats = {
     serverID: '583531571836092436',
     total: "590112421771739137",
     member: "590112458514104349",
     bots: "590112497525194752"
-}
+}*/
 
 client.on('guildMemberAdd', member => {
     /*if(member.guild.id !== stats.serverID) return;
