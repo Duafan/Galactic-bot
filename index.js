@@ -35,12 +35,12 @@ client.on('ready', () =>{
 
 
     // Get our server
-    const guild = client.guilds.cache.get('335722331949367296');
+    const guild = client.guilds.cache.get('583531571836092436');
 
     // Get our stats channels
-    const totalUsers = client.channels.cache.get('762351184907993148');
-    const memberUsers = client.channels.cache.get('762351254621257778');
-    const botUsers = client.channels.cache.get('762351282950242385');
+    const totalUsers = client.channels.cache.get('590112421771739137');
+    const memberUsers = client.channels.cache.get('590112458514104349');
+    const botUsers = client.channels.cache.get('590112497525194752');
 
     // Check every 10 seconds for changes
     setInterval(function() {
