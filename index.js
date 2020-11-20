@@ -35,12 +35,12 @@ client.on('ready', () =>{
 
 
     // Get our server
-    const guild = client.guilds.cache.get('583531571836092436');
+    const guild = client.guilds.cache.get('335722331949367296');
 
     // Get our stats channels
-    const totalUsers = client.channels.cache.get('590112421771739137');
-    const memberUsers = client.channels.cache.get('590112458514104349');
-    const botUsers = client.channels.cache.get('590112497525194752');
+    const totalUsers = client.channels.cache.get('762351184907993148');
+    const memberUsers = client.channels.cache.get('762351254621257778');
+    const botUsers = client.channels.cache.get('762351282950242385');
 
     // Check every 10 seconds for changes
     setInterval(function() {
@@ -72,18 +72,8 @@ client.on('ready', () =>{
 
 });
 
-/*const stats = {
-    serverID: '583531571836092436',
-    total: "590112421771739137",
-    member: "590112458514104349",
-    bots: "590112497525194752"
-}*/
 
 client.on('guildMemberAdd', member => {
-    /*if(member.guild.id !== stats.serverID) return;
-    client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
-    client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
-    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);*/
 
     const channel = member.guild.channels.cache.find(ch => ch.name === 'welcome🎉');
 	if (!channel) return;
@@ -101,11 +91,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('guildMemberRemove', member =>{
-    /*if(member.guild.id !== stats.serverID) return;
-    client.channels.cache.get(stats.total).setName(`👫🤖Total Users: ${member.guild.memberCount}`);
-    client.channels.cache.get(stats.member).setName(`👫Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
-    client.channels.cache.get(stats.bots).setName(`🤖Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);*/
-
+ 
     const channel = member.guild.channels.cache.find(ch => ch.name === 'goodbye👋');
 	if (!channel) return;
     const goodbyeEmbed = new Discord.MessageEmbed()
